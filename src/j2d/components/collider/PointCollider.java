@@ -1,7 +1,7 @@
-package components.collider;
+package j2d.components.collider;
 
-import attributes.Position2D;
-import components.GameObject;
+import j2d.attributes.Position2D;
+import j2d.components.GameObject;
 
 public class PointCollider extends Collider {
     Position2D position;

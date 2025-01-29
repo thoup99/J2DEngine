@@ -1,4 +1,4 @@
-package audio;
+package j2d.audio;
 
 
 import javax.sound.sampled.*;
@@ -33,7 +33,7 @@ public class AudioPlayer {
     }
 
     /**
-     * Loads URLs for all audio files that will be used
+     * Loads URLs for all j2d.audio files that will be used
      * during tetris
      */
     public static void loadAudioURLS() {
@@ -51,8 +51,8 @@ public class AudioPlayer {
 
     /**
      *
-     * @param url URL of audio file to get a Clip of
-     * @return Returns a Clip of the passed in audio file URL
+     * @param url URL of j2d.audio file to get a Clip of
+     * @return Returns a Clip of the passed in j2d.audio file URL
      */
     private static Clip getClipFromURL(URL url) {
         try {

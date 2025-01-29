@@ -1,4 +1,4 @@
-package components;
+package j2d.components;
 
 public class GameObject {
 }

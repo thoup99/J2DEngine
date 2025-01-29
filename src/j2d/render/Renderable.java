@@ -1,4 +1,4 @@
-package render;
+package j2d.render;
 
 import java.awt.*;
 

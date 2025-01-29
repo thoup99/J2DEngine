@@ -1,4 +1,4 @@
-package keyboard;
+package j2d.keyboard;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * KeyHandler.java
- * A class that tracks and handles keyboard inputs.
+ * A class that tracks and handles j2d.keyboard inputs.
  * Allows classes to subscribe to keys and receive
  * callbacks from anywhere.
  *

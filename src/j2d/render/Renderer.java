@@ -1,4 +1,4 @@
-package render;
+package j2d.render;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.Map;
  * Renderer.java
  * A class to allow Rendering of all objects to happen in one place.
  * This is to reduce redundancy and creation of long blocks of code
- * calling .render on objects
+ * calling .j2d.render on objects
  *
  * @author Tyler Houp
  */
@@ -89,7 +89,7 @@ public class Renderer {
     }
 
     /**
-     * Calls "render" on all Objects added to Renderer
+     * Calls "j2d.render" on all Objects added to Renderer
      * @param g2 Graphics2D Object passed to all added Objects
      */
     public static void renderAll(Graphics2D g2) {

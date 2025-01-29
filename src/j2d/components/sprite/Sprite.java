@@ -1,9 +1,9 @@
-package components.sprite;
+package j2d.components.sprite;
 
 
-import render.Renderable;
-import render.Renderer;
-import attributes.Position2D;
+import j2d.render.Renderable;
+import j2d.render.Renderer;
+import j2d.attributes.Position2D;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

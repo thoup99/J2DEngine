@@ -1,4 +1,4 @@
-package attributes;
+package j2d.attributes;
 
 /**
  * Position2D.java
@@ -29,7 +29,7 @@ public class Position2D {
     }
 
     /**
-     * Sets the x and y components of the Position2D
+     * Sets the x and y j2d.components of the Position2D
      * @param x X position
      * @param y Y position
      */

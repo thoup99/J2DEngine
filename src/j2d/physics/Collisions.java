@@ -1,6 +1,6 @@
-package physics;
+package j2d.physics;
 
-import components.collider.Collider;
+import j2d.components.collider.Collider;
 
 import java.util.ArrayList;
 import java.util.List;

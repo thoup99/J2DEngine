@@ -1,6 +1,6 @@
-package components.collider;
+package j2d.components.collider;
 
-import components.GameObject;
+import j2d.components.GameObject;
 
 public class RectangleCollider extends Collider {
 
