@@ -1,4 +1,4 @@
-package components;
+package components.sprite;
 
 
 import render.Renderable;
@@ -20,6 +20,7 @@ public class Sprite implements Renderable {
     protected Position2D position;
     protected boolean visible = true;
     protected BufferedImage image;
+    private int layer = 0;
 
     /**
      * Constructor for Sprite Class
@@ -27,6 +28,11 @@ public class Sprite implements Renderable {
      */
     public Sprite(Position2D pos) {
         position = pos;
+    }
+
+    public Sprite(Position2D pos, int layer) {
+        position = pos;
+        this.layer = layer;
     }
 
     /**
@@ -37,6 +43,12 @@ public class Sprite implements Renderable {
     public Sprite(Position2D pos, String path) {
         position = pos;
         loadSpriteFromPath(path);
+    }
+
+    public Sprite(Position2D pos, String path, int layer) {
+        position = pos;
+        loadSpriteFromPath(path);
+        this.layer = layer;
     }
 
     /**
@@ -62,6 +74,12 @@ public class Sprite implements Renderable {
         visible = newVisible;
     }
 
+    public void setLayer(int newLayer) {
+        removeFromRenderer();
+        layer = newLayer;
+        addToRenderer();
+    }
+
     /**
      * Draws Sprite to the screen
      * @param g2 Graphics2D object used to draw images
@@ -79,7 +97,7 @@ public class Sprite implements Renderable {
      */
     @Override
     public void addToRenderer() {
-        Renderer.add(this);
+        Renderer.add(this, layer);
     }
 
     /**
@@ -88,6 +106,6 @@ public class Sprite implements Renderable {
      */
     @Override
     public void removeFromRenderer() {
-        Renderer.remove(this);
+        Renderer.remove(this, layer);
     }
 }

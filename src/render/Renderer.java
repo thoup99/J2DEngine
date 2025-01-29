@@ -1,7 +1,9 @@
 package render;
 
 import java.awt.*;
+import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Renderer.java
@@ -12,15 +14,58 @@ import java.util.ArrayList;
  * @author Tyler Houp
  */
 public class Renderer {
-    private static ArrayList<Renderable> toRender = new ArrayList<>();
+    private static Map<Integer, ArrayList<Renderable>> layers = new HashMap<>();
+    private static int layerCount = 0;
+
+    public static void main (String[] args) {
+        layers.put(0, new ArrayList<>());
+    }
 
     /**
      * Adds Object to Array of items to be rendered every frame
      * @param r Object that implements Renderable
      */
     public static void add(Renderable r) {
-        if (!toRender.contains(r)) {
-            toRender.add(r);
+        add(r, 0);
+    }
+
+    public static void add(Renderable r, int layer) {
+        if (!layers.containsKey(layer)) {
+            boolean createdSuccessfully = createLayer(layer);
+            if (!createdSuccessfully) {
+                return;
+            }
+        }
+
+        if (!layers.get(layer).contains(r)) {
+            layers.get(layer).add(r);
+        }
+    }
+
+    private static boolean doesLayerExist(int number) {
+        return layers.containsKey(number);
+    }
+
+    public static boolean createLayer(int number) {
+        if (!doesLayerExist(number) && number == layerCount) {
+            layers.put(number, new ArrayList<>());
+            layerCount++;
+            System.out.println("Layer " + number + " created");
+            return true;
+        }
+        return false;
+    }
+
+    public static void clearLayer(int number) {
+        layers.get(number).clear();
+    }
+
+    public static void deleteLayer(int number) {
+        if (number == layerCount - 1 && layerCount != 0) {
+            layers.remove(number);
+        }
+        else {
+            System.out.println("Layer " + number + " not deleted. Only the topmost layer can be deleted {" + (layerCount - 1) + "}");
         }
     }
 
@@ -28,8 +73,19 @@ public class Renderer {
      * Removes Object from being rendered every frame
      * @param r Object that implements Renderable
      */
-    public static void remove(Renderable r) {
-        toRender.remove(r);
+    public static boolean remove(Renderable r, int layer) {
+        return layers.get(layer).remove(r);
+    }
+
+    public static boolean remove(Renderable r) {
+        for (ArrayList<Renderable> layer : layers.values()) {
+            for (Renderable lR : layer) {
+                if (r.equals(lR)) {
+                    return layer.remove(lR);
+                }
+            }
+        }
+        return false;
     }
 
     /**
@@ -37,8 +93,11 @@ public class Renderer {
      * @param g2 Graphics2D Object passed to all added Objects
      */
     public static void renderAll(Graphics2D g2) {
-        for (Renderable r : toRender) {
-            r.render(g2);
+        for (int i = 0; i < layerCount; i++) {
+            ArrayList<Renderable> layer = layers.get(i);
+            for (Renderable r : layer) {
+                r.render(g2);
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-package components;
+package components.sprite;
 
 import attributes.Position2D;
 
