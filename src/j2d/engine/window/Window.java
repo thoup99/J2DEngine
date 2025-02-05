@@ -1,7 +1,6 @@
 package j2d.engine.window;
 
 import j2d.engine.Engine;
-import j2d.engine.keyboard.KeyHandler;
 
 import javax.swing.*;
 import java.awt.*;

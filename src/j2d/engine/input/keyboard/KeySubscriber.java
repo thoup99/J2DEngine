@@ -1,4 +1,4 @@
-package j2d.engine.keyboard;
+package j2d.engine.input.keyboard;
 
 /**
  * KeySubscriber.java

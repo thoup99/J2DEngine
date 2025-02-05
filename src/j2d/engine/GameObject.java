@@ -3,9 +3,8 @@ package j2d.engine;
 import j2d.components.Component;
 import j2d.components.physics.RigidBody;
 import j2d.components.sprite.Sprite;
-import j2d.components.sprite.SpriteSheet;
-import j2d.engine.keyboard.KeyHandler;
-import j2d.engine.keyboard.KeySubscriber;
+import j2d.engine.input.keyboard.KeyHandler;
+import j2d.engine.input.keyboard.KeySubscriber;
 
 import java.util.ArrayList;
 import java.util.List;

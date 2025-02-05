@@ -1,7 +1,7 @@
 package j2d.engine;
 
 
-import j2d.engine.keyboard.KeyHandler;
+import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.window.Window;
 
 import java.util.ArrayList;
