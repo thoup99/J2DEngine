@@ -1,10 +1,10 @@
-package j2d.components;
+package j2d.engine;
 
-import j2d.engine.Engine;
 import j2d.engine.keyboard.KeyHandler;
 import j2d.engine.keyboard.KeySubscriber;
 
 public abstract class GameObject {
+
 
     public GameObject() {
         Engine.registerGameObject(this);

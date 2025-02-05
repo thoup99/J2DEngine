@@ -11,6 +11,5 @@ public class ExampleWindowCreation {
         Window window = new Window();
         window.setRecommendedDefaults();
         window.setTitle("Example Window");
-        window.setSize(1000,1000);
     }
 }

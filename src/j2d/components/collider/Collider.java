@@ -1,6 +1,6 @@
 package j2d.components.collider;
 
-import j2d.components.GameObject;
+import j2d.engine.GameObject;
 
 public abstract class Collider {
     private GameObject gameObject;

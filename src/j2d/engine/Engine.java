@@ -1,9 +1,7 @@
 package j2d.engine;
 
 
-import j2d.components.GameObject;
 import j2d.engine.keyboard.KeyHandler;
-import j2d.engine.render.Renderer;
 import j2d.engine.window.Window;
 
 import java.util.ArrayList;

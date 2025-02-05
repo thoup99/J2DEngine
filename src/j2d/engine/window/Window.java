@@ -49,7 +49,12 @@ public class Window {
         frame.setTitle(title);
     }
 
-    public void setSize(int width, int height) {
+    /**
+     * TODO - Doees not seems to resize panel after it has been created. Needs fixed before being made public again.
+     * @param width
+     * @param height
+     */
+    private void setSize(int width, int height) {
         this.width = width;
         this.height = height;
         frame.setSize(width, height);

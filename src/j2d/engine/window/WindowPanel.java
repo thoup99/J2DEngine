@@ -10,7 +10,7 @@ class WindowPanel extends JPanel {
 
     WindowPanel(int width, int height) {
         this.setPreferredSize(new Dimension(width, height));
-        this.setBackground(Color.BLUE);
+        this.setBackground(Color.WHITE);
         this.setDoubleBuffered(true);
 
         this.addKeyListener(KeyHandler.handler);
