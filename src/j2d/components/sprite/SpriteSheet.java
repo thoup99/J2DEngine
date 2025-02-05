@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 /**
  * SpriteSheet.java
- * A class to load and j2d.render sprite sheets
+ * A class to load and j2d.engine.render sprite sheets
  *
  * @author Tyler Houp
  */
