@@ -1,6 +1,7 @@
 package j2d.components.sprite;
 
 import j2d.attributes.Position2D;
+import j2d.engine.GameObject;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -28,8 +29,8 @@ public class SpriteSheet extends Sprite {
      * @param numRows Number of rows in the sprite sheet
      * @param numCols Number of columns in the sprite sheet
      */
-    public SpriteSheet(Position2D pos, BufferedImage loadedSheet, int numRows, int numCols) {
-        super(pos);
+    public SpriteSheet(GameObject parent, Position2D pos, BufferedImage loadedSheet, int numRows, int numCols) {
+        super(parent, pos);
         this.image = loadedSheet;
 
         this.numCols = numCols;

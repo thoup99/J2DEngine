@@ -1,6 +1,8 @@
 package j2d.components.sprite;
 
 
+import j2d.components.Component;
+import j2d.engine.GameObject;
 import j2d.engine.render.Renderable;
 import j2d.engine.render.Renderer;
 import j2d.attributes.Position2D;
@@ -16,7 +18,7 @@ import java.io.IOException;
  *
  * @author Tyler Houp
  */
-public class Sprite implements Renderable {
+public class Sprite extends Component implements Renderable {
     protected Position2D position;
     protected boolean visible = true;
     protected BufferedImage image;
@@ -26,11 +28,13 @@ public class Sprite implements Renderable {
      * Constructor for Sprite Class
      * @param pos Position2D Sprite will be linked to
      */
-    public Sprite(Position2D pos) {
+    public Sprite(GameObject parent, Position2D pos) {
+        super(parent);
         position = pos;
     }
 
-    public Sprite(Position2D pos, int layer) {
+    public Sprite(GameObject parent, Position2D pos, int layer) {
+        super(parent);
         position = pos;
         this.layer = layer;
     }
@@ -40,12 +44,14 @@ public class Sprite implements Renderable {
      * @param pos Position2D Sprite will be linked to
      * @param path Resource path to PNG for sprite
      */
-    public Sprite(Position2D pos, String path) {
+    public Sprite(GameObject parent, Position2D pos, String path) {
+        super(parent);
         position = pos;
         loadSpriteFromPath(path);
     }
 
-    public Sprite(Position2D pos, String path, int layer) {
+    public Sprite(GameObject parent, Position2D pos, String path, int layer) {
+        super(parent);
         position = pos;
         loadSpriteFromPath(path);
         this.layer = layer;

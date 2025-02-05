@@ -1,4 +1,4 @@
-package j2d.components.collider;
+package j2d.components.physics.collider;
 
 import j2d.attributes.Position2D;
 import j2d.engine.GameObject;
