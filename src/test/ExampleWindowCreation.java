@@ -11,5 +11,7 @@ public class ExampleWindowCreation {
         Window window = new Window();
         window.setRecommendedDefaults();
         window.setTitle("Example Window");
+
+        Engine.displayFPSCounter(true);
     }
 }

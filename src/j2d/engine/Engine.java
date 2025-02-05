@@ -14,6 +14,7 @@ public class Engine implements Runnable {
     private static Window window;
     private static int targetFPS;
     private static double drawInterval;
+    private static boolean isDisplayingFPS = false;
 
     /**
      * Initializes all components of the engine
@@ -34,32 +35,43 @@ public class Engine implements Runnable {
 
     @Override
     public void run() {
-        //Order
+        //    Order
         //Physics Update
         //Update
         //Physics Tick
         //Render
 
 
+        long previousTime = System.nanoTime();
+        long frameStartTime = System.nanoTime();
+        long frameEndTime;
         double delta = 0;
-        long lastTime = System.nanoTime();
-        long currentTime;
 
         while (engineThread.isAlive()) {
-            currentTime = System.nanoTime();
+            long currentTime = System.nanoTime();
+            delta += (currentTime - previousTime) / drawInterval;
+            previousTime = currentTime;
 
-            delta += (currentTime - lastTime) / drawInterval;
-            lastTime = currentTime;
+            if (delta >= 1) {
+                frameEndTime = System.nanoTime();
+                double elapsedSeconds = (frameEndTime - frameStartTime) / 1_000_000_000.0;
 
-            while (delta >= 1) {
-                double multDelta = delta / drawInterval;
-                doPhysicsUpdates(multDelta);
-                doUpdates(multDelta);
-                delta -= 1;
-            }
+                doPhysicsUpdates(elapsedSeconds);
+                doUpdates(elapsedSeconds);
 
-            if (Window.isCreated) {
-                window.repaintPanel();
+                while (delta >= 1) {
+                    delta -= 1;
+                }
+
+                if (Window.isCreated) {
+                    window.repaintPanel();
+                }
+                if (isDisplayingFPS) {
+                    int currentFPS = (int) ((1.0 / elapsedSeconds) + 0.5); //0.5 added to account for rounding
+                    System.out.println("Current FPS: " + currentFPS);
+                }
+
+                frameStartTime = frameEndTime;
             }
         }
 
@@ -98,5 +110,9 @@ public class Engine implements Runnable {
 
     public static void registerWindow(Window window) {
         Engine.window = window;
+    }
+
+    public static void displayFPSCounter(boolean isDisplayingFPS) {
+        Engine.isDisplayingFPS = isDisplayingFPS;
     }
 }
