@@ -18,7 +18,7 @@ public class KeyHandler implements KeyListener {
 
     private static Map<Integer, Boolean> keyMap = new HashMap<Integer, Boolean>();
     private static Map<Integer, ArrayList<KeySubscriber>> subscribers = new HashMap<Integer, ArrayList<KeySubscriber>>();
-    public static KeyHandler handler = new KeyHandler();
+    public static KeyHandler keyHandler = new KeyHandler();
 
     /**
      *  Constructor for KeyHandler

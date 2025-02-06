@@ -1,6 +1,7 @@
 package j2d.engine.window;
 
 import j2d.engine.input.keyboard.KeyHandler;
+import j2d.engine.input.mouse.MouseHandler;
 import j2d.engine.render.Renderer;
 
 import javax.swing.*;
@@ -13,7 +14,8 @@ class WindowPanel extends JPanel {
         this.setBackground(Color.WHITE);
         this.setDoubleBuffered(true);
 
-        this.addKeyListener(KeyHandler.handler);
+        this.addKeyListener(KeyHandler.keyHandler);
+        this.addMouseListener(MouseHandler.mouseHandler);
         this.setFocusable(true); //Panel Can be focused for key input
     }
 
