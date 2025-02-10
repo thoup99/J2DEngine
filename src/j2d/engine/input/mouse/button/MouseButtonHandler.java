@@ -26,6 +26,10 @@ public class MouseButtonHandler implements MouseListener {
         buttonSubscribers.put(awtMouseEventButton, new ArrayList<MouseButtonSubscriber>());
     }
 
+    public static boolean isButtonPressed(int awtMouseEventButton) {
+        return buttonMap.get(awtMouseEventButton);
+    }
+
     @Override
     public void mouseClicked(MouseEvent e) {
         int code = e.getButton();
