@@ -84,17 +84,6 @@ public class KeyHandler implements KeyListener {
     }
 
     /**
-     * Calls the keyPressed function on all subscribers that
-     * have opted to subscribed to the passed in key
-     * @param key KeyEvent to respond to
-     */
-    private void doCallbacks(int key) {
-        for (KeySubscriber subscriber : subscribers.get(key)) {
-            subscriber.keyPressed(key);
-        }
-    }
-
-    /**
      * Unused Function from KeyListener Interface
      * @param e KeyEvent
      */
@@ -116,7 +105,11 @@ public class KeyHandler implements KeyListener {
             boolean justPressed = !keyMap.get(code);
             keyMap.put(code, true);
 
-            if (justPressed) { doCallbacks(code); }
+            if (justPressed) {
+                for (KeySubscriber subscriber : subscribers.get(code)) {
+                    subscriber.keyPressed(code);
+                }
+            }
         }
     }
 
@@ -131,6 +124,10 @@ public class KeyHandler implements KeyListener {
         int code = e.getKeyCode();
         if (keyMap.containsKey(code)) {
             keyMap.put(code, false);
+
+            for (KeySubscriber subscriber : subscribers.get(code)) {
+                subscriber.keyReleased(code);
+            }
         }
     }
 }

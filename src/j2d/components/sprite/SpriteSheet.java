@@ -71,7 +71,7 @@ public class SpriteSheet extends Sprite {
     @Override
     public void render(Graphics2D g2) {
         if (visible) {
-            g2.drawImage(spriteImage, position.x, position.y, individualSpriteWidth, individualSpriteHeight, null);
+            g2.drawImage(spriteImage, position.getIntX(), position.getIntY(), individualSpriteWidth, individualSpriteHeight, null);
         }
     }
 }

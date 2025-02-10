@@ -100,4 +100,9 @@ public class Window implements KeySubscriber {
             System.exit(0);
         }
     }
+
+    @Override
+    public void keyReleased(int key) {
+
+    }
 }

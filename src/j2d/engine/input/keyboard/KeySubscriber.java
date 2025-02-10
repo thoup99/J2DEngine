@@ -8,4 +8,5 @@ package j2d.engine.input.keyboard;
  */
 public interface KeySubscriber {
     void keyPressed(int key);
+    void keyReleased(int key);
 }

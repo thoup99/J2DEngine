@@ -11,15 +11,15 @@ import java.awt.*;
  * @author Tyler Houp
  */
 public class Position2D {
-    public int x;
-    public int y;
+    public double x;
+    public double y;
 
     /**
      * Constructor for Position2D
      * @param x X position
      * @param y Y position
      */
-    public Position2D(int x, int y) {
+    public Position2D(double x, double y) {
         setPosition(x, y);
     }
 
@@ -40,9 +40,17 @@ public class Position2D {
      * @param x X position
      * @param y Y position
      */
-    public void setPosition(int x , int y) {
+    public void setPosition(double x , double y) {
         this.x = x;
         this.y = y;
+    }
+
+    public int getIntX() {
+        return (int) (x + 0.5); // + 0.5 for rounding
+    }
+
+    public int getIntY() {
+        return (int) (y + 0.5);
     }
 
     public String toString() {

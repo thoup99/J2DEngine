@@ -1,6 +1,7 @@
 package j2d.engine.input.mouse.button;
 
 import j2d.attributes.Position2D;
+import j2d.engine.input.keyboard.KeySubscriber;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -24,6 +25,20 @@ public class MouseButtonHandler implements MouseListener {
     private static void addButton(int awtMouseEventButton) {
         buttonMap.put(awtMouseEventButton, false);
         buttonSubscribers.put(awtMouseEventButton, new ArrayList<MouseButtonSubscriber>());
+    }
+
+    public static void subscribe(MouseButtonSubscriber subscriber, int[] subscribedButtons) {
+        for (int button : subscribedButtons) {
+            if (!buttonSubscribers.get(button).contains(subscriber)) {
+                buttonSubscribers.get(button).add(subscriber);
+            }
+        }
+    }
+
+    public static void unsubscribe(MouseButtonSubscriber subscriber) {
+        for (int button: buttonSubscribers.keySet()) {
+            buttonSubscribers.get(button).remove(subscriber);
+        }
     }
 
     public static boolean isButtonPressed(int awtMouseEventButton) {

@@ -93,7 +93,7 @@ public class Sprite extends Component implements Renderable {
     @Override
     public void render(Graphics2D g2) {
         if (visible) {
-            g2.drawImage(image, position.x, position.y, image.getWidth(), image.getHeight(), null);
+            g2.drawImage(image, position.getIntX(), position.getIntY(), image.getWidth(), image.getHeight(), null);
         }
     }
 
