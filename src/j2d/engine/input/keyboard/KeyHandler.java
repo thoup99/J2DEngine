@@ -30,37 +30,19 @@ public class KeyHandler implements KeyListener {
 
     }
 
-    /**
-     * Must be called before KeyHandler will function properly.
-     * Creates and loads the KeyMap and Subscriber Map.
-     */
+
     public static void initialize() {
-        loadKeyMap();
-        loadSubscribersMap();
+
     }
 
-    /**
-     * Puts all the keys that will be used at some point
-     * into a Hashmap.
-     */
-    private static void loadKeyMap() {
-        keyMap.put(KeyEvent.VK_Q, false);
-        keyMap.put(KeyEvent.VK_E, false);
-        keyMap.put(KeyEvent.VK_A, false);
-        keyMap.put(KeyEvent.VK_S, false);
-        keyMap.put(KeyEvent.VK_D, false);
-        keyMap.put(KeyEvent.VK_P, false);
-        keyMap.put(KeyEvent.VK_ESCAPE, false);
+    private static void addKey(int awtKeyEventKey) {
+        keyMap.put(awtKeyEventKey, false);
+        subscribers.put(awtKeyEventKey, new ArrayList<KeySubscriber>());
     }
 
-    /**
-     * Uses KeyMap to make a list of KeySubscribers for
-     * each key.
-     */
-    private static void loadSubscribersMap() {
-        for (int key : keyMap.keySet()) {
-            subscribers.put(key, new ArrayList<KeySubscriber>());
-        }
+    private static void removeKey(int awtKeyEventKey) {
+        keyMap.remove(awtKeyEventKey);
+        subscribers.remove(awtKeyEventKey);
     }
 
     /**
@@ -78,6 +60,10 @@ public class KeyHandler implements KeyListener {
      */
     public static void subscribe(KeySubscriber subscriber, int[] subscribedKeys) {
         for (int key : subscribedKeys) {
+            if (!keyMap.containsKey(key)) {
+                addKey(key);
+            }
+
             if (!subscribers.get(key).contains(subscriber)) {
                 subscribers.get(key).add(subscriber);
             }
@@ -90,6 +76,10 @@ public class KeyHandler implements KeyListener {
     public static void unsubscribe(KeySubscriber subscriber) {
         for (int key: subscribers.keySet()) {
             subscribers.get(key).remove(subscriber);
+
+            if (subscribers.get(key).isEmpty()) {
+                removeKey(key);
+            }
         }
     }
 

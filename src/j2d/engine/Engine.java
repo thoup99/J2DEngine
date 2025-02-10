@@ -2,6 +2,9 @@ package j2d.engine;
 
 
 import j2d.engine.input.keyboard.KeyHandler;
+import j2d.engine.input.mouse.button.MouseButtonHandler;
+import j2d.engine.input.mouse.motion.MouseMotionHandler;
+import j2d.engine.input.mouse.wheel.MouseWheelHandler;
 import j2d.engine.window.Window;
 
 import java.util.ArrayList;
@@ -21,6 +24,9 @@ public class Engine implements Runnable {
      */
     public static void initialize() {
         KeyHandler.initialize();
+        MouseButtonHandler.initialize();
+        MouseMotionHandler.initialize();
+        MouseWheelHandler.initialize();
         //audio init
         //physics init?
 

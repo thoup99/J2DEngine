@@ -1,16 +1,21 @@
 package j2d.engine.window;
 
+import j2d.attributes.Position2D;
 import j2d.engine.Engine;
+import j2d.engine.input.keyboard.KeyHandler;
+import j2d.engine.input.keyboard.KeySubscriber;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
-public class Window {
+public class Window implements KeySubscriber {
     public static boolean isCreated = false;
     int width, height;
+    private boolean closeOnEsc = false;
 
-    JFrame frame;
-    WindowPanel panel;
+    static JFrame frame;
+    static WindowPanel panel;
 
     public Window() {
         this(600, 600);
@@ -38,6 +43,9 @@ public class Window {
         Engine.registerWindow(this);
         isCreated = true;
         setVisible(true);
+
+        int[] subscribedKeys = {KeyEvent.VK_ESCAPE};
+        KeyHandler.subscribe(this, subscribedKeys);
     }
 
     public void repaintPanel() {
@@ -76,5 +84,20 @@ public class Window {
         centerWindow();
         setResizable(false);
         setVisible(true);
+    }
+
+    public void setCloseOnEsc(boolean closeOnEsc) {
+        this.closeOnEsc = closeOnEsc;
+    }
+
+    public static Position2D getMousePosition() {
+        return new Position2D(panel.getMousePosition());
+    }
+
+    @Override
+    public void keyPressed(int key) {
+        if (key == KeyEvent.VK_ESCAPE && closeOnEsc) {
+            System.exit(0);
+        }
     }
 }

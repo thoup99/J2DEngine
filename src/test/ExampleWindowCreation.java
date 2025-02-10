@@ -12,6 +12,7 @@ public class ExampleWindowCreation {
         window.setRecommendedDefaults();
         window.setTitle("Example Window");
 
-        Engine.displayFPSCounter(true);
+        //Engine.displayFPSCounter(true);
+        window.setCloseOnEsc(true);
     }
 }
