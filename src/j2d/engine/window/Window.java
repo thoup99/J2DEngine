@@ -38,7 +38,7 @@ public class Window implements KeySubscriber {
         frame.pack();
 
         frame.setLayout(null);
-        setSize(width, height);
+        //setSize(width, height);
 
         Engine.registerWindow(this);
         isCreated = true;
