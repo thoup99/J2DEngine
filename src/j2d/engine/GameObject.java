@@ -1,6 +1,5 @@
 package j2d.engine;
 
-import j2d.components.Transform;
 import j2d.components.Component;
 import j2d.components.physics.RigidBody;
 import j2d.components.sprite.Sprite;

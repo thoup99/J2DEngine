@@ -3,8 +3,12 @@ package j2d.components.sprite;
 import j2d.attributes.Position2D;
 import j2d.engine.GameObject;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * SpriteSheet.java
@@ -20,6 +24,23 @@ public class SpriteSheet extends Sprite {
     private final int numCols;
 
     BufferedImage spriteImage;
+
+    public static BufferedImage loadSheetImage(String filename) {
+        if (filename.charAt(0) != '/') {
+            filename = "/" + filename;
+        }
+
+        InputStream ipStream = SpriteSheet.class.getResourceAsStream(filename);
+
+        if (ipStream != null) {
+            try {
+                return ImageIO.read(ipStream);
+            } catch (IOException e) {
+                System.out.println(e.getMessage() + "Error Loading Image at " + filename);
+            }
+        }
+        return null;
+    }
 
 
     /**

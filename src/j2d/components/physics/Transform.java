@@ -1,7 +1,8 @@
-package j2d.components;
+package j2d.components.physics;
 
 import j2d.attributes.Position2D;
 import j2d.attributes.Rotation;
+import j2d.components.Component;
 import j2d.engine.GameObject;
 
 //TODO IMPLEMENT
