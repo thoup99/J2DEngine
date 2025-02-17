@@ -11,11 +11,16 @@ public class Debug {
     public static boolean drawCollisionShapes = false;
 
     public static void initialize() {
-
+        FPSDisplay.hideText();
     }
 
     public static void setDrawFPS(boolean drawFPS) {
         Debug.drawFPS = drawFPS;
+        if (Debug.drawFPS) {
+            FPSDisplay.showText();
+        } else {
+            FPSDisplay.hideText();
+        }
     }
 
     public static void setPrintMouseButtons(boolean printMouseButtons) {

@@ -12,6 +12,13 @@ public class FPSDisplay extends GameObject {
         fpsText = new Text(this, new Position2D(5, 10), "FPS: ");
     }
 
+    static void hideText() {
+        fpsText.removeFromRenderer();
+    }
+
+    static void showText() {
+        fpsText.addToRenderer();
+    }
 
     @Override
     public void update(double delta) {
