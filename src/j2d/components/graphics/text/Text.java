@@ -14,14 +14,20 @@ public class Text extends Component implements Renderable {
     private Color textColor;
     private String text;
     private Position2D position;
+    private int layer;
 
     public Text(GameObject parentGameObject, Position2D position, String text) {
+        this(parentGameObject, position, text, 0);
+    }
+
+    public Text(GameObject parentGameObject, Position2D position, String text, int layer) {
         super(parentGameObject);
         this.text = text;
         this.position = position;
         //Temporary
         this.textColor = Color.red;
 
+        this.layer = layer;
         addToRenderer();
     }
 

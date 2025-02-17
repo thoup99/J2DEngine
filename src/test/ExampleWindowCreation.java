@@ -14,7 +14,7 @@ public class ExampleWindowCreation {
         window.setTitle("Example Window");
 
         //Engine.displayFPSCounter(true);
-        //Debug.setDrawFPS(true);
+        Debug.setDrawFPS(true);
         //Debug.setPrintMousePosition(true);
 
         window.setCloseOnEsc(true);

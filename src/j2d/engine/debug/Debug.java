@@ -1,5 +1,7 @@
 package j2d.engine.debug;
 
+import j2d.engine.render.Renderer;
+
 public class Debug {
     static boolean drawFPS = false;
     static final FPSDisplay fpsDisplay = new FPSDisplay();
@@ -11,6 +13,7 @@ public class Debug {
     public static boolean drawCollisionShapes = false;
 
     public static void initialize() {
+        Renderer.createDebugLayer();
         FPSDisplay.hideText();
     }
 

@@ -14,6 +14,8 @@ import java.util.Map;
  * @author Tyler Houp
  */
 public class Renderer {
+    public static final int DEBUG_LAYER = -777;
+
     private static Map<Integer, ArrayList<Renderable>> layers = new HashMap<>();
     private static int layerCount = 0;
 
@@ -88,6 +90,12 @@ public class Renderer {
         return false;
     }
 
+    public static void createDebugLayer() {
+        if (!layers.containsKey(DEBUG_LAYER)) {
+            layers.put(DEBUG_LAYER, new ArrayList<>());
+        }
+    }
+
     /**
      * Calls "j2d.engine.render" on all Objects added to Renderer
      * @param g2 Graphics2D Object passed to all added Objects
@@ -98,6 +106,10 @@ public class Renderer {
             for (Renderable r : layer) {
                 r.render(g2);
             }
+        }
+
+        for (Renderable r : layers.get(DEBUG_LAYER)) {
+            r.render(g2);
         }
     }
 }
