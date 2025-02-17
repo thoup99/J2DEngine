@@ -1,4 +1,4 @@
-package j2d.attributes;
+package j2d.attributes.position;
 
 
 import java.awt.*;
@@ -11,8 +11,8 @@ import java.awt.*;
  * @author Tyler Houp
  */
 public class Position2D {
-    public double x;
-    public double y;
+    protected double x;
+    protected double y;
 
     /**
      * Constructor for Position2D
@@ -47,6 +47,14 @@ public class Position2D {
     public void setPosition(double x , double y) {
         this.x = x;
         this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
     }
 
     public int getIntX() {

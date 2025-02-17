@@ -1,6 +1,6 @@
 package j2d.components.sprite;
 
-import j2d.attributes.Position2D;
+import j2d.attributes.position.Position2D;
 import j2d.engine.GameObject;
 
 import java.awt.image.BufferedImage;

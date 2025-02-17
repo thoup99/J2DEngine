@@ -1,6 +1,6 @@
 package j2d.components.sprite;
 
-import j2d.attributes.Position2D;
+import j2d.attributes.position.Position2D;
 import j2d.engine.GameObject;
 
 import javax.imageio.ImageIO;
@@ -8,7 +8,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 /**
  * SpriteSheet.java
