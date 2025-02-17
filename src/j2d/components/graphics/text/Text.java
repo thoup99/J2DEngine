@@ -29,6 +29,10 @@ public class Text extends Component implements Renderable {
         this.text = text;
     }
 
+    public void setColor(Color textColor) {
+        this.textColor = textColor;
+    }
+
     @Override
     public void addToRenderer() {
         Renderer.add(this);

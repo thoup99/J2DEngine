@@ -94,6 +94,10 @@ public class Window implements KeySubscriber {
         return new Position2D(panel.getMousePosition());
     }
 
+    public void setBackgroundColor(Color newColor) {
+        panel.setBackground(newColor);
+    }
+
     @Override
     public void keyPressed(int key) {
         if (key == KeyEvent.VK_ESCAPE && closeOnEsc) {
