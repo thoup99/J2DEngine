@@ -32,7 +32,11 @@ public class Position2D {
     }
 
     public Position2D(Point p) {
-        setPosition(p.x, p.y);
+        if (p != null) {
+            setPosition(p.x, p.y);
+        } else {
+            setPosition(-1, -1);
+        }
     }
 
     /**

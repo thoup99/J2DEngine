@@ -1,6 +1,7 @@
 package test;
 
 import j2d.engine.Engine;
+import j2d.engine.debug.Debug;
 import j2d.engine.window.Window;
 
 public class ExampleWindowCreation {
@@ -13,6 +14,9 @@ public class ExampleWindowCreation {
         window.setTitle("Example Window");
 
         //Engine.displayFPSCounter(true);
+        //Debug.setDrawFPS(true);
+        //Debug.setPrintMousePosition(true);
+
         window.setCloseOnEsc(true);
     }
 }

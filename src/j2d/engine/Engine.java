@@ -1,6 +1,7 @@
 package j2d.engine;
 
 
+import j2d.engine.debug.Debug;
 import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.mouse.button.MouseButtonHandler;
 import j2d.engine.input.mouse.motion.MouseMotionHandler;
@@ -17,7 +18,8 @@ public class Engine implements Runnable {
     private static Window window;
     private static int targetFPS;
     private static double drawInterval;
-    private static boolean isDisplayingFPS = false;
+    private static boolean isPrintingFPS = false;
+    public static int currentFPS = 0;
 
     /**
      * Initializes all components of the engine
@@ -27,8 +29,11 @@ public class Engine implements Runnable {
         MouseButtonHandler.initialize();
         MouseMotionHandler.initialize();
         MouseWheelHandler.initialize();
+
         //audio init
         //physics init?
+
+        Debug.initialize();
 
         setTargetFPS(30);
 
@@ -72,8 +77,8 @@ public class Engine implements Runnable {
                 if (Window.isCreated) {
                     window.repaintPanel();
                 }
-                if (isDisplayingFPS) {
-                    int currentFPS = (int) ((1.0 / elapsedSeconds) + 0.5); //0.5 added to account for rounding
+                currentFPS = (int) ((1.0 / elapsedSeconds) + 0.5); //0.5 added to account for rounding
+                if (isPrintingFPS) {
                     System.out.println("Current FPS: " + currentFPS);
                 }
 
@@ -118,7 +123,7 @@ public class Engine implements Runnable {
         Engine.window = window;
     }
 
-    public static void displayFPSCounter(boolean isDisplayingFPS) {
-        Engine.isDisplayingFPS = isDisplayingFPS;
+    public static void printFPSCounter(boolean isPrintingFPS) {
+        Engine.isPrintingFPS = isPrintingFPS;
     }
 }

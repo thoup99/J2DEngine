@@ -10,8 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412ba730-65e3-45ac-8cdf-1194f02c213e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/j2d/attributes/Rotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/j2d/components/Transform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/graphics/text/CenteredText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/graphics/text/Text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/debug/Debug.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/debug/FPSDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/debug/MousePrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/rooms/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/rooms/RoomManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -20,12 +25,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/J2DEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/J2DEngine.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Position2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Position2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Rotation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/audio/AudioPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/audio/AudioPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/Component.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/physics/RigidBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/physics/RigidBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/components/physics/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/physics/Transform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/physics/collider/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/physics/collider/Collider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/physics/collider/PointCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/physics/collider/PointCollider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/physics/collider/RectangleCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/physics/collider/RectangleCollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/components/sprite/AnimatedSprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/sprite/AnimatedSprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/sprite/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/sprite/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/sprite/SpriteSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/sprite/SpriteSheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/Engine.java" afterDir="false" />
@@ -118,7 +126,8 @@
       <workItem from="1738861931106" duration="2581000" />
       <workItem from="1738992857723" duration="5108000" />
       <workItem from="1739160814790" duration="974000" />
-      <workItem from="1739161863076" duration="9718000" />
+      <workItem from="1739161863076" duration="18473000" />
+      <workItem from="1739688281711" duration="3874000" />
     </task>
     <servers />
   </component>
