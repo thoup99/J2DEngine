@@ -4,6 +4,8 @@ import j2d.engine.Engine;
 import j2d.engine.debug.Debug;
 import j2d.engine.window.Window;
 
+import java.awt.*;
+
 public class ExampleWindowCreation {
     public static void main(String[] args) {
         Engine.initialize();
@@ -14,8 +16,9 @@ public class ExampleWindowCreation {
         window.setTitle("Example Window");
 
         //Engine.displayFPSCounter(true);
+        window.setBackgroundColor(Color.BLACK);
         Debug.setDrawFPS(true);
-        //Debug.setPrintMousePosition(true);
+        Debug.setPrintMousePosition(true);
 
         window.setCloseOnEsc(true);
     }
