@@ -20,6 +20,10 @@ public class TestGameObject extends GameObject implements MouseMotionSubscriber,
     Circle circle;
 
     public TestGameObject() {
+        circle = new Circle(this, 0, new Position2D(300, 300), 300);
+        circle.setStrokeWidth(5);
+        circle.setColor(Color.YELLOW);
+
         square = new Square(this, 0, new Position2D(50, 50), new Position2D(550, 550));
         square.setStrokeWidth(5);
         square.setColor(Color.RED);
@@ -27,11 +31,7 @@ public class TestGameObject extends GameObject implements MouseMotionSubscriber,
         int[] keys = {KeyEvent.VK_T, KeyEvent.VK_Y, KeyEvent.VK_U};
         KeyHandler.subscribe(this, keys);
 
-        circle = new Circle(this, 0, new Position2D(300, 300), 300);
-        circle.setStrokeWidth(5);
-        circle.setColor(Color.YELLOW);
-
-        line = new Line(this, 0, new Position2D(0, 0), new Position2D(10, 10));
+        line = new Line(this, 0, new Position2D(0, 0), new Position2D(300, 300));
         line.setStrokeWidth(10);
         line.setColor(Color.BLUE);
         MouseMotionHandler.subscribe(this);
