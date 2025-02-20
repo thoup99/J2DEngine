@@ -17,8 +17,8 @@ public class ExampleWindowCreation {
 
         //Engine.displayFPSCounter(true);
         window.setBackgroundColor(Color.BLACK);
+        TestGameObject gameObject = new TestGameObject();
         Debug.setDrawFPS(true);
-        Debug.setPrintMousePosition(true);
 
         window.setCloseOnEsc(true);
     }

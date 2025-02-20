@@ -15,7 +15,6 @@ import java.util.Map;
  */
 public class Renderer {
     public static final int DEBUG_LAYER = -777;
-
     private static Map<Integer, ArrayList<Renderable>> layers = new HashMap<>();
     private static int layerCount = 0;
 
@@ -94,6 +93,13 @@ public class Renderer {
         if (!layers.containsKey(DEBUG_LAYER)) {
             layers.put(DEBUG_LAYER, new ArrayList<>());
         }
+    }
+
+    public static int getTopLayer() {
+        if (layerCount == 0) {
+            return 0;
+        }
+        return layerCount - 1;
     }
 
     /**

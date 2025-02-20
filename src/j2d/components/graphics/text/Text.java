@@ -21,7 +21,7 @@ public class Text extends Component implements Renderable {
     private int layer;
 
     public Text(GameObject parentGameObject, Position2D position, String text) {
-        this(parentGameObject, position, text, 0);
+        this(parentGameObject, position, text, Renderer.getTopLayer());
     }
 
     public Text(GameObject parentGameObject, Position2D position, String text, int layer) {
@@ -36,6 +36,12 @@ public class Text extends Component implements Renderable {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public void setLayer(int layer) {
+        this.layer = layer;
+        removeFromRenderer();
+        addToRenderer();
     }
 
     public String getText() {
