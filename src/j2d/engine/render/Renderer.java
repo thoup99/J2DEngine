@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class Renderer {
     public static final int DEBUG_LAYER = -777;
-    private static Map<Integer, ArrayList<Renderable>> layers = new HashMap<>();
+    private static  Map<Integer, ArrayList<Renderable>> layers = new HashMap<>();
     private static int layerCount = 0;
 
     public static void main (String[] args) {
@@ -107,8 +107,12 @@ public class Renderer {
      * @param g2 Graphics2D Object passed to all added Objects
      */
     public static void renderAll(Graphics2D g2) {
+        if (g2 == null) {
+            return;
+        }
+
         for (int i = 0; i < layerCount; i++) {
-            ArrayList<Renderable> layer = layers.get(i);
+            final ArrayList<Renderable> layer = (ArrayList<Renderable>) layers.get(i).clone();
             for (Renderable r : layer) {
                 r.render(g2);
             }

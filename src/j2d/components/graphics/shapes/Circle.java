@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class Circle extends Shape {
     int radius;
-    OffsetPosition2D position;
+    OffsetPosition2D position = new OffsetPosition2D(new Position2D(0 ,0) , 100, 100);
 
     public Circle(GameObject parentGameObject) {
         this(parentGameObject, Renderer.getTopLayer(), new Position2D(0, 0), 10);
