@@ -1,6 +1,7 @@
 package test;
 
 import j2d.attributes.position.Position2D;
+import j2d.components.graphics.shapes.Circle;
 import j2d.components.graphics.shapes.Line;
 import j2d.components.graphics.shapes.Square;
 import j2d.engine.GameObject;
@@ -16,6 +17,7 @@ import java.awt.event.KeyEvent;
 public class TestGameObject extends GameObject implements MouseMotionSubscriber, KeySubscriber {
     Line line;
     Square square;
+    Circle circle;
 
     public TestGameObject() {
         square = new Square(this, 0, new Position2D(50, 50), new Position2D(550, 550));
@@ -24,6 +26,10 @@ public class TestGameObject extends GameObject implements MouseMotionSubscriber,
 
         int[] keys = {KeyEvent.VK_T, KeyEvent.VK_Y, KeyEvent.VK_U};
         KeyHandler.subscribe(this, keys);
+
+        circle = new Circle(this, 0, new Position2D(300, 300), 300);
+        circle.setStrokeWidth(5);
+        circle.setColor(Color.YELLOW);
 
         line = new Line(this, 0, new Position2D(0, 0), new Position2D(10, 10));
         line.setStrokeWidth(10);
