@@ -1,5 +1,6 @@
 package j2d.components.graphics.shapes;
 
+import j2d.attributes.position.OffsetPosition2D;
 import j2d.attributes.position.Position2D;
 import j2d.engine.GameObject;
 import j2d.engine.render.Renderer;
@@ -7,7 +8,8 @@ import j2d.engine.render.Renderer;
 import java.awt.*;
 
 public class Square extends Shape {
-    Position2D topLeft, bottomRight;
+    Position2D topLeft;
+    OffsetPosition2D bottomRight;
 
     public Square(GameObject parentGameObject) {
         this(parentGameObject, Renderer.getTopLayer());
@@ -20,11 +22,7 @@ public class Square extends Shape {
     public Square(GameObject parentGameObject, int layer, Position2D topLeft, Position2D bottomRight) {
         super(parentGameObject, layer);
         this.topLeft = topLeft;
-        this.bottomRight = bottomRight;
-    }
-
-    public void setWidth(int width) {
-        stroke = new BasicStroke(width);
+        this.bottomRight = new OffsetPosition2D(topLeft, (bottomRight.getIntX() - topLeft.getIntX()), (bottomRight.getIntY() - topLeft.getIntY()));
     }
 
     public Position2D getTopLeft() {
@@ -37,10 +35,18 @@ public class Square extends Shape {
 
     public void setTopLeft(Position2D topLeft) {
         this.topLeft = topLeft;
+        this.bottomRight.setBaseKeepPosition(topLeft);
+        validatePositions();
     }
 
     public void setBottomRight(Position2D bottomRight) {
-        this.bottomRight = bottomRight;
+        this.bottomRight = new OffsetPosition2D(topLeft, (bottomRight.getIntX() - topLeft.getIntX()), (bottomRight.getIntY() - topLeft.getIntY()));
+        validatePositions();
+    }
+
+    //TODO if the bottomRight becomes the bottomLeft change topLeft and bottomRight accordingly & similar
+    private void validatePositions() {
+
     }
 
     @Override

@@ -22,6 +22,26 @@ public class OffsetPosition2D extends Position2D {
         y_off_pos = basePosition.getY() + y_offset;
     }
 
+
+
+    public void setBasePosition(Position2D pos) {
+        this.basePosition = pos;
+        recalculateOffsetPosition();
+    }
+
+    public void setBaseKeepPosition(Position2D pos) {
+        x_offset = x_off_pos - pos.getX();
+        y_offset = y_off_pos - pos.getY();
+
+        this.basePosition = pos;
+        recalculateOffsetPosition();
+    }
+
+    private void recalculateOffsetPosition() {
+        x_off_pos = basePosition.getX() + x_offset;
+        y_off_pos = basePosition.getY() + y_offset;
+    }
+
     public double getXOffset() {
         return x_offset;
     }
@@ -48,5 +68,10 @@ public class OffsetPosition2D extends Position2D {
     @Override
     public int getIntY() {
         return (int) getY();
+    }
+
+    @Override
+    public String toString() {
+        return "(" + getX() + ", " + getY() + ")";
     }
 }
