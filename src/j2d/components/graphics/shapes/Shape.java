@@ -10,6 +10,7 @@ import java.awt.*;
 public abstract class Shape extends Component implements Renderable {
     int layer;
     protected Color color;
+    protected BasicStroke stroke;
 
     public Shape(GameObject parentGameObject) {
         this(parentGameObject, Renderer.getTopLayer());
@@ -27,8 +28,21 @@ public abstract class Shape extends Component implements Renderable {
         addToRenderer();
     }
 
+    public void setStrokeWidth(int width) {
+        stroke = new BasicStroke(width);
+    }
+
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    protected void applyG2Settings(Graphics2D g2) {
+        if (stroke != null) {
+            g2.setStroke(stroke);
+        }
+        if (color != null) {
+            g2.setColor(color);
+        }
     }
 
     @Override

@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class Line extends Shape {
     Position2D start, end;
-    private BasicStroke stroke;
+
 
     public Line(GameObject parentGameObject) {
         this(parentGameObject, Renderer.getTopLayer());
@@ -22,10 +22,6 @@ public class Line extends Shape {
         super(parentGameObject, layer);
         this.start = start;
         this.end = end;
-    }
-
-    public void setWidth(int width) {
-        stroke = new BasicStroke(width);
     }
 
     public Position2D getStart() {
@@ -47,12 +43,8 @@ public class Line extends Shape {
     @Override
     public void render(Graphics2D g2) {
         Graphics2D g2Copy = (Graphics2D) g2.create() ;
-        if (stroke != null) {
-            g2Copy.setStroke(stroke);
-        }
-        if (color != null) {
-            g2Copy.setColor(color);
-        }
+        applyG2Settings(g2Copy);
+
         g2Copy.drawLine(start.getIntX(), start.getIntY(), end.getIntX(), end.getIntY());
     }
 }
