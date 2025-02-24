@@ -1,4 +1,4 @@
-package test;
+package test.shapes;
 
 import j2d.attributes.position.Position2D;
 import j2d.components.graphics.shapes.Circle;
@@ -14,12 +14,12 @@ import j2d.engine.window.Window;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class TestGameObject extends GameObject implements MouseMotionSubscriber, KeySubscriber {
+public class ShapeMaker extends GameObject implements MouseMotionSubscriber, KeySubscriber {
     Line line;
     Square square;
     Circle circle;
 
-    public TestGameObject() {
+    public ShapeMaker() {
         circle = new Circle(this, 0, new Position2D(300, 300), 300);
         circle.setStrokeWidth(5);
         circle.setColor(Color.YELLOW);

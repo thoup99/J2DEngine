@@ -49,11 +49,16 @@ public class CenteredText extends Text{
 
     @Override
     public void render(Graphics2D g2) {
+        if (offsetPosition == null) {
+            return;
+        }
         if (needsRecahced) {
             calculateOffset(g2);
             needsRecahced = false;
         }
         Graphics2D g2Copy = (Graphics2D) g2.create();
+
+        g2Copy.setFont(font);
         g2Copy.setColor(textColor);
         g2Copy.drawString(text, offsetPosition.getIntX(), offsetPosition.getIntY());
         g2Copy.dispose();
