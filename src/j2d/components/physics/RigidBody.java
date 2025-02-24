@@ -10,4 +10,10 @@ public class RigidBody extends Component {
         super(parentGameObject);
         this.transform = transform;
     }
+
+    @Override
+    public void delete() {
+        super.delete();
+        //TODO IMPLIMENT WHEN RIGIDBODY WORKS
+    }
 }

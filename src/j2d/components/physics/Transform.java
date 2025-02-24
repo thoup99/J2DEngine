@@ -35,4 +35,10 @@ public class Transform extends Component {
     public Rotation getRotation() {
         return rotation;
     }
+
+    @Override
+    public void delete() {
+        super.delete();
+        //TODO IMPLIMENT WHEN TRANSFORM IS FUNCTIONAL
+    }
 }

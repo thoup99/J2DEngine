@@ -10,10 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412ba730-65e3-45ac-8cdf-1194f02c213e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/shapespawning/InstructionText.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/window/BasicWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -64,8 +60,12 @@
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/physics/PhysicsServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/physics/PhysicsServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/window/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/window/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/window/WindowPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/window/WindowPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/ExampleWindowCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/shapes/ShapeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/TestGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/shapes/ShapeMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/shapes/ShapeMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/shapes/ShapeMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/shapes/ShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/shapes/ShapeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/shapespawning/InstructionText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/shapespawning/InstructionText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/window/BasicWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/window/BasicWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +142,7 @@
       <workItem from="1739688281711" duration="23278000" />
       <workItem from="1740087617033" duration="1353000" />
       <workItem from="1740373166374" duration="76000" />
-      <workItem from="1740373247226" duration="2106000" />
+      <workItem from="1740373247226" duration="2728000" />
     </task>
     <servers />
   </component>
