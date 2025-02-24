@@ -1,9 +1,7 @@
 package test.shapespawning;
 
 import j2d.attributes.position.Position2D;
-import j2d.components.graphics.shapes.Circle;
-import j2d.components.graphics.shapes.Shape;
-import j2d.components.graphics.shapes.Square;
+import j2d.components.graphics.shapes.*;
 import j2d.engine.GameObject;
 import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.keyboard.KeySubscriber;
@@ -38,13 +36,13 @@ public class ShapeSpawner extends GameObject implements KeySubscriber {
     public void keyPressed(int key) {
         Position2D mousePos = Window.getMousePosition();
         if (key == KeyEvent.VK_S) {
-            Square newSquare = new Square(this, 0,
+            Square newSquare = new FillSquare(this, 0,
                     new Position2D(mousePos.getX() - 10, mousePos.getY() - 10),
                     new Position2D(mousePos.getX() + 10, mousePos.getY() + 10));
             shapes.add(newSquare);
         }
         if (key == KeyEvent.VK_C) {
-            Circle newCircle = new Circle(this, 0, mousePos, 10);
+            Circle newCircle = new FillCircle(this, 0, mousePos, 10);
             shapes.add(newCircle);
         }
 
