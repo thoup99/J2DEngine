@@ -39,6 +39,12 @@ public class CenteredText extends Text{
         needsRecached = true;
     }
 
+    @Override
+    public void setFontStyle(int style) {
+        super.setFontStyle(style);
+        needsRecached = true;
+    }
+
     private void calculateOffset(Graphics2D g2) {
         FontMetrics metrics = g2.getFontMetrics(font);
         double new_x_offset = -((double) metrics.stringWidth(text) / 2);
