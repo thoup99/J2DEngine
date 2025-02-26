@@ -6,6 +6,7 @@ import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.mouse.button.MouseButtonHandler;
 import j2d.engine.input.mouse.motion.MouseMotionHandler;
 import j2d.engine.input.mouse.wheel.MouseWheelHandler;
+import j2d.engine.updates.gametick.GameTick;
 import j2d.engine.window.Window;
 
 import java.util.ArrayList;
@@ -14,7 +15,6 @@ import java.util.List;
 public class Engine implements Runnable {
     private static Engine engine;
     private static Thread engineThread;
-    private static List<GameObject> gameObjects = new ArrayList<>();
     private static Window window;
     private static int targetFPS;
     private static double drawInterval;
@@ -67,8 +67,8 @@ public class Engine implements Runnable {
                 frameEndTime = System.nanoTime();
                 double elapsedSeconds = (frameEndTime - frameStartTime) / 1_000_000_000.0;
 
-                doPhysicsUpdates(elapsedSeconds);
-                doUpdates(elapsedSeconds);
+                //doPhysicsUpdates(elapsedSeconds); should be a fix amount of time ex. 0.02s should be able to set time through code
+                GameTick.doUpdates(elapsedSeconds);
 
                 while (delta >= 1) {
                     delta -= 1;
@@ -86,28 +86,6 @@ public class Engine implements Runnable {
             }
         }
 
-    }
-
-    public static void registerGameObject(GameObject gameObject) {
-        if (!gameObjects.contains(gameObject)) {
-            gameObjects.add(gameObject);
-        }
-    }
-
-    public static void unregisterGameObject(GameObject gameObject) {
-        gameObjects.remove(gameObject);
-    }
-
-    private void doPhysicsUpdates(double delta) {
-        for (GameObject gameObject : gameObjects) {
-            gameObject.physics_update(delta);
-        }
-    }
-
-    private void doUpdates(double delta) {
-        for (GameObject gameObject : gameObjects) {
-            gameObject.update(delta);
-        }
     }
 
     public static void setTargetFPS(int targetFPS) {

@@ -7,8 +7,8 @@ import j2d.engine.GameObject;
 
 //TODO IMPLEMENT
 public class Transform extends Component {
-    Position2D position;
-    Rotation rotation;
+    final Position2D position;
+    final Rotation rotation;
 
     public Transform(GameObject gameObject) {
         this(gameObject, new Position2D(), new Rotation());
