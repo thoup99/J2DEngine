@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class CenteredText extends Text{
     OffsetPosition2D offsetPosition;
-    private boolean needsRecahced = false;
+    private boolean needsRecached = false;
 
 
     public CenteredText(GameObject parentGameObject, Position2D position, String text) {
@@ -18,25 +18,25 @@ public class CenteredText extends Text{
     public CenteredText(GameObject parentGameObject, Position2D position, String text, int layer) {
         super(parentGameObject, position, text, layer);
         offsetPosition = new OffsetPosition2D(position, 0, 0);
-        needsRecahced = true;
+        needsRecached = true;
     }
 
     @Override
     public void setText(String text) {
         super.setText(text);
-        needsRecahced = true;
+        needsRecached = true;
     }
 
     @Override
     public void setFont(Font font) {
         super.setFont(font);
-        needsRecahced = true;
+        needsRecached = true;
     }
 
     @Override
     public void setFontSize(int fontSize) {
         super.setFontSize(fontSize);
-        needsRecahced = true;
+        needsRecached = true;
     }
 
     private void calculateOffset(Graphics2D g2) {
@@ -52,9 +52,9 @@ public class CenteredText extends Text{
         if (offsetPosition == null) {
             return;
         }
-        if (needsRecahced) {
+        if (needsRecached) {
             calculateOffset(g2);
-            needsRecahced = false;
+            needsRecached = false;
         }
         Graphics2D g2Copy = (Graphics2D) g2.create();
 

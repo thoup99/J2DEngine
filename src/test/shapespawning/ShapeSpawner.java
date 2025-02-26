@@ -49,7 +49,7 @@ public class ShapeSpawner extends GameObject implements KeySubscriber {
     public void keyPressed(int key) {
         if (key == KeyEvent.VK_S) {
             Position2D mousePos = Window.getMousePosition();
-            int size = getRandomInt(10, 20);
+            int size = getRandomInt(5, 50);
 
             Square newSquare = new FillSquare(this, 0,
                     new Position2D(mousePos.getX() - size, mousePos.getY() - size),
@@ -61,7 +61,7 @@ public class ShapeSpawner extends GameObject implements KeySubscriber {
         if (key == KeyEvent.VK_C) {
             Position2D mousePos = Window.getMousePosition();
 
-            Circle newCircle = new FillCircle(this, 0, mousePos, getRandomInt(10, 30));
+            Circle newCircle = new FillCircle(this, 0, mousePos, getRandomInt(5, 50));
 
             newCircle.setColor(getRandomColor());
             shapes.add(newCircle);
