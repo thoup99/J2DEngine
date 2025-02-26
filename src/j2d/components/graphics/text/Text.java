@@ -57,7 +57,7 @@ public class Text extends Component implements Renderable {
     }
 
     public void setFontSize(int size) {
-        font = font.deriveFont(size);
+        font = font.deriveFont(Font.PLAIN, size);
     }
 
     @Override

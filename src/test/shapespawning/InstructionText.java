@@ -11,8 +11,8 @@ public class InstructionText extends GameObject {
         line1 = new CenteredText(this, position2D, "S - Square & C - Circle", 1);
         line2 = new CenteredText(this, new Position2D(position2D.getX(), position2D.getY()+ 20) , "R - Reset", 1);
 
-        line1.setFontSize(100);
-        line2.setFontSize(100);
+        line1.setFontSize(16);
+        line2.setFontSize(16);
     }
 
     @Override
