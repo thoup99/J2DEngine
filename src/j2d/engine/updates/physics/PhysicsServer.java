@@ -34,7 +34,7 @@ public class PhysicsServer {
 
     public static void doPhysicsUpdates(double delta) {
         for (GameObject gameObject : gameObjects) {
-            gameObject.physics_update(delta);
+            gameObject.physicsUpdate(delta);
         }
     }
 }

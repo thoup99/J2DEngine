@@ -4,7 +4,6 @@ import j2d.components.Component;
 import j2d.components.graphics.shapes.Shape;
 import j2d.components.graphics.text.Text;
 import j2d.components.physics.RigidBody;
-import j2d.components.physics.Transform;
 import j2d.components.sprite.Sprite;
 import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.keyboard.KeySubscriber;
@@ -75,5 +74,5 @@ public abstract class GameObject {
     }
 
     public abstract void update(double delta);
-    public abstract void physics_update(double delta);
+    public abstract void physicsUpdate(double delta);
 }

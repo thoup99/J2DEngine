@@ -63,7 +63,7 @@ public class ShapeSpawner extends GameObject implements KeySubscriber, MouseMoti
     }
 
     @Override
-    public void physics_update(double delta) {
+    public void physicsUpdate(double delta) {
 
     }
 
