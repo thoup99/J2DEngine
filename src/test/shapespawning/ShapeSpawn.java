@@ -18,6 +18,7 @@ public class ShapeSpawn {
         window.setTitle("Shape Spawner");
 
         Debug.setDrawFPS(true);
+        Debug.setDrawPhysicsTick(true);
 
         Renderer.createLayer(0); //Shape Layer
         Renderer.createLayer(1); //Text Layer

@@ -9,6 +9,8 @@ import java.util.List;
 public class PhysicsServer {
     private static List<GameObject> gameObjects = new ArrayList<>();
     private static List<RigidBody> rigidBodies = new ArrayList<RigidBody>();
+    public static double timeStep = 0.02;
+    public static double currentStepRate;
 
     //TODO impliment collisions. Can use GameObject Base Class
 
@@ -36,6 +38,10 @@ public class PhysicsServer {
         for (GameObject gameObject : gameObjects) {
             gameObject.physicsUpdate(delta);
         }
+    }
+
+    public static void tick() {
+
     }
 }
 

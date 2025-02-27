@@ -7,6 +7,7 @@ import j2d.engine.input.mouse.button.MouseButtonHandler;
 import j2d.engine.input.mouse.motion.MouseMotionHandler;
 import j2d.engine.input.mouse.wheel.MouseWheelHandler;
 import j2d.engine.updates.gametick.GameTick;
+import j2d.engine.updates.physics.PhysicsServer;
 import j2d.engine.window.Window;
 
 import java.util.ArrayList;
@@ -55,35 +56,63 @@ public class Engine implements Runnable {
 
         long previousTime = System.nanoTime();
         long frameStartTime = System.nanoTime();
-        long frameEndTime;
+        long frameEndTime = 0;
+        double elapsedSecondsFrame = 0;
+        boolean repaintWindow = false;
+
+        double physicsAccumulatedTime = 0;
+        boolean doPhysicsTick = false;
+
         double delta = 0;
 
         while (engineThread.isAlive()) {
             long currentTime = System.nanoTime();
             delta += (currentTime - previousTime) / drawInterval;
+            physicsAccumulatedTime += (currentTime - previousTime) / 1_000_000_000.0;
             previousTime = currentTime;
 
+            //Physics
+            if (physicsAccumulatedTime > PhysicsServer.timeStep) {
+                PhysicsServer.doPhysicsUpdates(physicsAccumulatedTime);
+                PhysicsServer.currentStepRate = physicsAccumulatedTime;
+
+                physicsAccumulatedTime -= PhysicsServer.timeStep;
+                doPhysicsTick = true;
+            }
+
+            //Update/FPS
             if (delta >= 1) {
                 frameEndTime = System.nanoTime();
-                double elapsedSeconds = (frameEndTime - frameStartTime) / 1_000_000_000.0;
+                elapsedSecondsFrame = (frameEndTime - frameStartTime) / 1_000_000_000.0;
 
-                //doPhysicsUpdates(elapsedSeconds); should be a fix amount of time ex. 0.02s should be able to set time through code
-                GameTick.doUpdates(elapsedSeconds);
+                GameTick.doUpdates(elapsedSecondsFrame);
 
                 while (delta >= 1) {
                     delta -= 1;
                 }
 
+                repaintWindow = true;
+            }
+
+            //Physics Tick
+            if (doPhysicsTick) {
+                PhysicsServer.tick();
+                doPhysicsTick = false;
+            }
+
+            //Render
+            if (repaintWindow) {
                 if (Window.isCreated) {
                     window.repaintPanel();
                 }
-                currentFPS = (int) ((1.0 / elapsedSeconds) + 0.5); //0.5 added to account for rounding
+                currentFPS = (int) ((1.0 / elapsedSecondsFrame) + 0.5); //0.5 added to account for rounding
                 if (isPrintingFPS) {
                     System.out.println("Current FPS: " + currentFPS);
                 }
 
                 frameStartTime = frameEndTime;
             }
+
         }
 
     }
