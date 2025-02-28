@@ -6,8 +6,6 @@ import j2d.engine.debug.Debug;
 import j2d.engine.render.Renderer;
 import j2d.engine.window.Window;
 
-import java.awt.*;
-
 public class ShapeSpawn {
     public static void main(String[] args) {
         Engine.initialize();
