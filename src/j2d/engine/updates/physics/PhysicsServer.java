@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhysicsServer {
-    private static List<GameObject> gameObjects = new ArrayList<>();
-    private static List<RigidBody> rigidBodies = new ArrayList<RigidBody>();
+    private static final List<GameObject> gameObjects = new ArrayList<>();
+    private static final List<RigidBody> rigidBodies = new ArrayList<RigidBody>();
     public static double timeStep = 0.02;
     public static double currentStepRate;
 
@@ -16,27 +16,37 @@ public class PhysicsServer {
 
     public static void registerGameObject(GameObject gameObject) {
         if (!gameObjects.contains(gameObject)) {
-            gameObjects.add(gameObject);
+            synchronized (gameObjects) {
+                gameObjects.add(gameObject);
+            }
         }
     }
 
     public static void unregisterGameObject(GameObject gameObject) {
-        gameObjects.remove(gameObject);
+        synchronized (gameObjects) {
+            gameObjects.remove(gameObject);
+        }
     }
 
     public static void registerRigidBody(RigidBody gameObject) {
         if (!rigidBodies.contains(gameObject)) {
-            rigidBodies.add(gameObject);
+            synchronized (rigidBodies) {
+                rigidBodies.add(gameObject);
+            }
         }
     }
 
     public static void unregisterRigidBody(RigidBody gameObject) {
-        rigidBodies.remove(gameObject);
+        synchronized (rigidBodies) {
+            rigidBodies.remove(gameObject);
+        }
     }
 
     public static void doPhysicsUpdates(double delta) {
-        for (GameObject gameObject : gameObjects) {
-            gameObject.physicsUpdate(delta);
+        synchronized (gameObjects) {
+            for (GameObject gameObject : gameObjects) {
+                gameObject.physicsUpdate(delta);
+            }
         }
     }
 
