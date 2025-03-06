@@ -49,6 +49,10 @@ public class Position2D {
         this.y = y;
     }
 
+    public void setPosition(Position2D newPosition) {
+        setPosition(newPosition.x, newPosition.y);
+    }
+
     public double getX() {
         return x;
     }
