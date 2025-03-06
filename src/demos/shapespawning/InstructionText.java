@@ -1,4 +1,4 @@
-package test.shapespawning;
+package demos.shapespawning;
 
 import j2d.attributes.position.Position2D;
 import j2d.components.graphics.text.CenteredText;

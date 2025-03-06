@@ -1,9 +1,8 @@
-package test.window;
+package demos.window;
 
 import j2d.engine.Engine;
 import j2d.engine.debug.Debug;
 import j2d.engine.window.Window;
-import test.shapes.ShapeMaker;
 
 import java.awt.*;
 
