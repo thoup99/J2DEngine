@@ -65,6 +65,10 @@ public class Position2D {
         return (int) (y + 0.5);
     }
 
+    public Position2D copy() {
+        return new Position2D(x, y);
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
