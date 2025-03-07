@@ -17,6 +17,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/J2DEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/J2DEngine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/positiondisplay/MouseTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/positiondisplay/MouseTracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/positiondisplay/PositionDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/positiondisplay/PositionDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/shapes/ShapeMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapes/ShapeMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/shapes/ShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapes/ShapeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/shapespawning/InstructionText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapespawning/InstructionText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/shapespawning/ShapeSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapespawning/ShapeSpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/shapespawning/ShapeSpawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapespawning/ShapeSpawner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/window/BasicWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/window/BasicWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Rotation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Transform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Vector2D.java" afterDir="false" />
@@ -64,14 +72,6 @@
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/physics/PhysicsServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/physics/PhysicsServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/window/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/window/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/window/WindowPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/window/WindowPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/positiondisplay/MouseTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/positiondisplay/MouseTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/positiondisplay/PositionDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/positiondisplay/PositionDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/shapes/ShapeMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapes/ShapeMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/shapes/ShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapes/ShapeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/shapespawning/InstructionText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapespawning/InstructionText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapespawning/ShapeSpawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/shapespawning/ShapeSpawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/shapespawning/ShapeSpawner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/window/BasicWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/window/BasicWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +153,7 @@
       <workItem from="1740519360040" duration="406000" />
       <workItem from="1740611640131" duration="6976000" />
       <workItem from="1740717984329" duration="3695000" />
-      <workItem from="1740871836633" duration="7159000" />
+      <workItem from="1740871836633" duration="8195000" />
     </task>
     <servers />
   </component>
