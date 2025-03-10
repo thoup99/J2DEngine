@@ -94,4 +94,8 @@ public class Vector2D {
     public double getIntY() {
         return (int) y;
     }
+
+    public String toString() {
+        return String.format("<%.2f, %.2f>", x, y);
+    }
 }
