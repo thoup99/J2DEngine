@@ -79,4 +79,19 @@ public class Vector2D {
         return new Vector2D(position1.getX() - position2.getX(), position1.getY() - position2.getY());
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getIntX() {
+        return (int) x;
+    }
+
+    public double getIntY() {
+        return (int) y;
+    }
 }
