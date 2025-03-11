@@ -13,6 +13,8 @@ public class MouseTracker extends GameObject implements MouseMotionSubscriber {
     public MouseTracker() {
         positionDisplay = new PositionDisplay(mousePosition);
         MouseMotionHandler.subscribe(this);
+
+        ready();
     }
 
     @Override

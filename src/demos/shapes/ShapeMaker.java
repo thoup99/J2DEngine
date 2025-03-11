@@ -35,6 +35,8 @@ public class ShapeMaker extends GameObject implements MouseMotionSubscriber, Key
         line.setStrokeWidth(10);
         line.setColor(Color.BLUE);
         MouseMotionHandler.subscribe(this);
+
+        ready();
     }
 
     @Override

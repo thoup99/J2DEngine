@@ -28,6 +28,8 @@ public class ShapeSpawner extends GameObject implements KeySubscriber, MouseMoti
         int[] keys = {KeyEvent.VK_S, KeyEvent.VK_C, KeyEvent.VK_R, KeyEvent.VK_P};
         KeyHandler.subscribe(this, keys);
         MouseMotionHandler.subscribe(this);
+
+        ready();
     }
 
     private Color getRandomColor() {

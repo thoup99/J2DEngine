@@ -13,6 +13,8 @@ public class InstructionText extends GameObject {
 
         line1.setFontSize(16);
         line2.setFontSize(16);
+
+        ready();
     }
 
     @Override
