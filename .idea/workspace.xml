@@ -10,6 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412ba730-65e3-45ac-8cdf-1194f02c213e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/collider/BoxCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/collider/CircleCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/collider/Collider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/updates/physics/CollisionServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -106,6 +110,7 @@
     &quot;Application.ExampleWindowCreation.executor&quot;: &quot;Run&quot;,
     &quot;Application.PositionDisplayer.executor&quot;: &quot;Run&quot;,
     &quot;Application.ShapeSpawn.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ShapeTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
@@ -161,6 +166,10 @@
       <workItem from="1741631883877" duration="181000" />
       <workItem from="1741632555299" duration="1592000" />
       <workItem from="1741638478135" duration="34000" />
+      <workItem from="1741654045094" duration="306000" />
+      <workItem from="1741665072162" duration="20000" />
+      <workItem from="1741745724734" duration="113000" />
+      <workItem from="1741791220671" duration="720000" />
     </task>
     <servers />
   </component>
