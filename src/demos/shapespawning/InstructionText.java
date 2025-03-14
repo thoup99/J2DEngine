@@ -2,7 +2,7 @@ package demos.shapespawning;
 
 import j2d.attributes.position.Position2D;
 import j2d.components.graphics.text.CenteredText;
-import j2d.engine.GameObject;
+import j2d.engine.gameobject.GameObject;
 
 public class InstructionText extends GameObject {
     CenteredText line1, line2;

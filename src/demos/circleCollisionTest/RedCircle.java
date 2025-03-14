@@ -4,7 +4,7 @@ import j2d.attributes.position.Position2D;
 import j2d.components.graphics.shapes.FillCircle;
 import j2d.components.physics.collider.CircleCollider;
 import j2d.components.physics.collider.Collider;
-import j2d.engine.GameObject;
+import j2d.engine.gameobject.GameObject;
 import j2d.engine.input.mouse.motion.MouseMotionHandler;
 import j2d.engine.input.mouse.motion.MouseMotionSubscriber;
 
@@ -14,6 +14,7 @@ public class RedCircle extends GameObject implements MouseMotionSubscriber {
     Position2D position;
     FillCircle fillCircle;
     Collider collider;
+    int timeouts = 0;
 
     public RedCircle(Position2D position, int radius) {
         this.position = position;

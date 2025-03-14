@@ -4,7 +4,7 @@ import j2d.attributes.position.Position2D;
 import j2d.components.graphics.shapes.Circle;
 import j2d.components.graphics.shapes.Line;
 import j2d.components.graphics.shapes.Square;
-import j2d.engine.GameObject;
+import j2d.engine.gameobject.GameObject;
 import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.keyboard.KeySubscriber;
 import j2d.engine.input.mouse.motion.MouseMotionHandler;
