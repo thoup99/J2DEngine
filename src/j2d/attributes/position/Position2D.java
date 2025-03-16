@@ -55,12 +55,21 @@ public class Position2D {
         setPosition(newPosition.x, newPosition.y);
     }
 
+    public Position2D(Position2D position2D) {
+        setPosition(position2D.getX(), position2D.getY());
+    }
+
     public void addX(double x) {
         this.x += x;
     }
 
     public void addY(double y) {
         this.y += y;
+    }
+
+    public void addVector2D(Vector2D vector2D) {
+        addX(vector2D.getX());
+        addY(vector2D.getY());
     }
 
     public double getX() {
