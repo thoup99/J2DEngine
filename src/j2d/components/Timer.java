@@ -48,6 +48,10 @@ public class Timer extends Component{
         timeRemainingNanoseconds = durationNanoseconds;
     }
 
+    public void restart() {
+        timeRemainingNanoseconds = durationNanoseconds;
+    }
+
     public void pause() {
         isTicking = false;
     }
