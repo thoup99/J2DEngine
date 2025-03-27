@@ -48,12 +48,21 @@ public class Timer extends Component{
         timeRemainingNanoseconds = durationNanoseconds;
     }
 
+    public void resume() {
+        isTicking = true;
+    }
+
     public void restart() {
         timeRemainingNanoseconds = durationNanoseconds;
     }
 
     public void pause() {
         isTicking = false;
+    }
+
+    public void addTime(int milliseconds) {
+        long nanoTimeToAdd = milliToNano(milliseconds);
+        timeRemainingNanoseconds += nanoTimeToAdd;
     }
 
     public double timeRemaining() {
