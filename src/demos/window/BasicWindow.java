@@ -19,5 +19,7 @@ public class BasicWindow {
         Debug.setDrawFPS(true);
 
         window.setCloseOnEsc(true);
+
+        Engine.ready();
     }
 }

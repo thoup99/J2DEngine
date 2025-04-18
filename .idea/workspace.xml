@@ -10,6 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412ba730-65e3-45ac-8cdf-1194f02c213e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/sprite/AnimationFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/sprite/SpriteAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -189,6 +191,10 @@
       <workItem from="1742070472961" duration="7000" />
       <workItem from="1742936069658" duration="89000" />
       <workItem from="1742936179754" duration="145000" />
+      <workItem from="1743175025492" duration="19709000" />
+      <workItem from="1744346205503" duration="598000" />
+      <workItem from="1744518432561" duration="1827000" />
+      <workItem from="1744758191641" duration="606000" />
     </task>
     <servers />
   </component>

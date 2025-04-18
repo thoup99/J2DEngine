@@ -21,5 +21,7 @@ public class PositionDisplayer {
         MouseTracker mouseTracker = new MouseTracker();
 
         window.setCloseOnEsc(true);
+
+        Engine.ready();
     }
 }

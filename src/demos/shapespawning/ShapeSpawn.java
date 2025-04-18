@@ -25,5 +25,7 @@ public class ShapeSpawn {
         ShapeSpawner ss = new ShapeSpawner();
 
         window.setCloseOnEsc(true);
+
+        Engine.ready();
     }
 }

@@ -24,5 +24,6 @@ public class TimerDemo {
         InstructionText instructionText = new InstructionText();
         TimerUser timerUser = new TimerUser();
 
+        Engine.ready();
     }
 }

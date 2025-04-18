@@ -15,11 +15,12 @@ public class ShapeTest {
         window.setRecommendedDefaults();
         window.setTitle("ShapeTest");
 
-        //Engine.displayFPSCounter(true);
         window.setBackgroundColor(Color.BLACK);
         ShapeMaker gameObject = new ShapeMaker();
         Debug.setDrawFPS(true);
 
         window.setCloseOnEsc(true);
+
+        Engine.ready();
     }
 }

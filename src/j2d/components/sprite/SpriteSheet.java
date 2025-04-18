@@ -16,31 +16,15 @@ import java.io.InputStream;
  * @author Tyler Houp
  */
 public class SpriteSheet extends Sprite {
-    private final int individualSpriteHeight;
-    private final int individualSpriteWidth;
+    private int individualSpriteHeight;
+    private int individualSpriteWidth;
+    private int xPadding, yPadding = 0;
+    private int xSpacing, ySpacing = 0;
 
-
+    private final int numRows;
     private final int numCols;
 
     BufferedImage spriteImage;
-
-    public static BufferedImage loadSheetImage(String filename) {
-        if (filename.charAt(0) != '/') {
-            filename = "/" + filename;
-        }
-
-        InputStream ipStream = SpriteSheet.class.getResourceAsStream(filename);
-
-        if (ipStream != null) {
-            try {
-                return ImageIO.read(ipStream);
-            } catch (IOException e) {
-                System.out.println(e.getMessage() + "Error Loading Image at " + filename);
-            }
-        }
-        return null;
-    }
-
 
     /**
      * Constructor for SpriteSheet Class
@@ -53,13 +37,30 @@ public class SpriteSheet extends Sprite {
         super(parent, pos);
         this.image = loadedSheet;
 
+        this.numRows = numRows;
         this.numCols = numCols;
 
-        this.individualSpriteHeight = image.getHeight() / numRows;
-        this.individualSpriteWidth = image.getWidth() / numCols;
+        recalculateSpriteDimensions();
 
         setSprite(0,0);
         addToRenderer();
+    }
+
+    public void setPadding(int xPadding, int yPadding) {
+        this.xPadding = xPadding;
+        this.yPadding = yPadding;
+        recalculateSpriteDimensions();
+    }
+
+    public void setSpacing(int xSpacing, int ySpacing) {
+        this.xSpacing = xSpacing;
+        this.ySpacing = ySpacing;
+        recalculateSpriteDimensions();
+    }
+
+    private void recalculateSpriteDimensions() {
+        this.individualSpriteWidth = (image.getWidth() - (2 * xPadding) - ((numRows - 1) * xSpacing)) / numCols;
+        this.individualSpriteHeight = (image.getHeight() - (2 * yPadding) - ((numRows - 1) * ySpacing)) / numRows;
     }
 
     /**
@@ -67,9 +68,13 @@ public class SpriteSheet extends Sprite {
      * @param spriteNum Number of the sprite to set.
      */
     public void setSprite(int spriteNum) {
-        int x = (spriteNum % numCols) * individualSpriteWidth;
-        int y = (spriteNum / numCols) * individualSpriteHeight;
-        spriteImage = image.getSubimage(x, y, individualSpriteWidth, individualSpriteHeight);
+        int col = (spriteNum % numCols);
+        int row = (spriteNum / numCols);
+        setSprite(row, col);
+    }
+
+    public int getSpriteNum(int row, int col) {
+        return row * numCols + col;
     }
 
     /**
@@ -78,8 +83,9 @@ public class SpriteSheet extends Sprite {
      * @param col Column of desired sprite.
      */
     public void setSprite(int row, int col) {
-        int x = individualSpriteWidth * col;
-        int y = individualSpriteHeight * row;
+        int x = xPadding + ( (individualSpriteWidth + xSpacing) * col );
+        int y = yPadding + ( (individualSpriteHeight + ySpacing) * row );
+        //System.out.println("Sprite: ("+ row + ", " + col + ") X: " + x + " Y: " + y + " Width: " + individualSpriteWidth + " Height: " + individualSpriteHeight);
         spriteImage = image.getSubimage(x, y, individualSpriteWidth, individualSpriteHeight);
     }
 

@@ -20,5 +20,7 @@ public class CircleCollisionTest {
         RedCircle redCircle = new RedCircle(new Position2D(0, 0), 20);
         BlueCircle blueCircle = new BlueCircle(new Position2D(400, 400), 40);
         BlueCircle blueCircle1 = new BlueCircle(new Position2D(100, 200), 60);
+
+        Engine.ready();
     }
 }
