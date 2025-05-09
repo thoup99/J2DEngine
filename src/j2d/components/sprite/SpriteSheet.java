@@ -24,6 +24,8 @@ public class SpriteSheet extends Sprite {
     private final int numRows;
     private final int numCols;
 
+    private int spriteNumber = 0;
+
     BufferedImage spriteImage;
 
     /**
@@ -59,7 +61,7 @@ public class SpriteSheet extends Sprite {
     }
 
     private void recalculateSpriteDimensions() {
-        this.individualSpriteWidth = (image.getWidth() - (2 * xPadding) - ((numRows - 1) * xSpacing)) / numCols;
+        this.individualSpriteWidth = (image.getWidth() - (2 * xPadding) - ((numCols - 1) * xSpacing)) / numCols;
         this.individualSpriteHeight = (image.getHeight() - (2 * yPadding) - ((numRows - 1) * ySpacing)) / numRows;
     }
 
@@ -85,8 +87,12 @@ public class SpriteSheet extends Sprite {
     public void setSprite(int row, int col) {
         int x = xPadding + ( (individualSpriteWidth + xSpacing) * col );
         int y = yPadding + ( (individualSpriteHeight + ySpacing) * row );
-        //System.out.println("Sprite: ("+ row + ", " + col + ") X: " + x + " Y: " + y + " Width: " + individualSpriteWidth + " Height: " + individualSpriteHeight);
+        spriteNumber = getSpriteNum(row, col);
         spriteImage = image.getSubimage(x, y, individualSpriteWidth, individualSpriteHeight);
+    }
+
+    public int getSpriteNumber() {
+        return spriteNumber;
     }
 
     /**
