@@ -6,123 +6,103 @@ import j2d.engine.gameobject.GameObject;
 import j2d.engine.render.Renderable;
 import j2d.engine.render.Renderer;
 import j2d.attributes.position.Position2D;
+import j2d.tools.ImageLoader;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
- * Sprite.java
- * A class to draw images on the screen and move them around.
+ * Represents a drawable 2D sprite component that can be attached to a GameObject.
+ * It handles rendering an image to the screen at a specified position and layer,
+ * with optional visibility control.
+ *
+ * The Sprite must be associated with a Position2D attribute and is automatically
+ * added to the renderer on creation.
  *
  * @author Tyler Houp
+ * @since November 11, 2024
  */
 public class Sprite extends Component implements Renderable {
     protected Position2D position;
     protected boolean visible = true;
     protected BufferedImage image;
-    private int layer = 0;
+    private int layer;
 
     /**
-     * Constructor for Sprite Class
-     * @param pos Position2D Sprite will be linked to
+     * Constructs a Sprite using a resource path to load the image.
+     *
+     * @param parent   The GameObject this component is attached to.
+     * @param position The position attribute controlling the sprite's location.
+     * @param path     The path to the image resource.
      */
-    public Sprite(GameObject parent, Position2D pos) {
-        super(parent);
-        position = pos;
-    }
-
-    public Sprite(GameObject parent, Position2D pos, int layer) {
-        super(parent);
-        position = pos;
-        this.layer = layer;
+    public Sprite(GameObject parent, Position2D position, String path) {
+        this(parent, position, ImageLoader.loadResource(path), 0);
     }
 
     /**
-     * Constructor for Sprite Class
-     * @param pos Position2D Sprite will be linked to
-     * @param path Resource path to PNG for sprite
+     * Constructs a Sprite using a preloaded BufferedImage.
+     *
+     * @param parent   The GameObject this component is attached to.
+     * @param position The position attribute controlling the sprite's location.
+     * @param image    The image to render.
      */
-    public Sprite(GameObject parent, Position2D pos, String path) {
-        super(parent);
-        position = pos;
-        loadSpriteFromPath(path);
+    public Sprite(GameObject parent, Position2D position, BufferedImage image) {
+        this(parent, position, image, 0);
     }
 
-    public Sprite(GameObject parent, Position2D pos, BufferedImage image) {
+    /**
+     * Constructs a Sprite with a resource path and a specified render layer.
+     *
+     * @param parent   The GameObject this component is attached to.
+     * @param position The position attribute controlling the sprite's location.
+     * @param path     The path to the image resource.
+     * @param layer    The rendering layer to draw the sprite on.
+     */
+    public Sprite(GameObject parent, Position2D position, String path, int layer) {
+        this(parent, position, ImageLoader.loadResource(path), layer);
+    }
+
+    /**
+     * Constructs a Sprite with a preloaded BufferedImage and specified render layer.
+     *
+     * @param parent   The GameObject this component is attached to.
+     * @param position The position attribute controlling the sprite's location.
+     * @param image    The image to render.
+     * @param layer    The rendering layer to draw the sprite on.
+     */
+    public Sprite(GameObject parent, Position2D position, BufferedImage image, int layer) {
         super(parent);
-        position = pos;
+        this.position = position;
         this.image = image;
+        this.layer = layer;
         addToRenderer();
     }
 
-    public Sprite(GameObject parent, Position2D pos, BufferedImage image, int layer) {
-        super(parent);
-        position = pos;
-        this.image = image;
-        this.layer = layer;
-        addToRenderer();
-    }
-
-    public Sprite(GameObject parent, Position2D pos, String path, int layer) {
-        super(parent);
-        position = pos;
-        loadSpriteFromPath(path);
-        this.layer = layer;
-    }
-
     /**
-     * Takes the path to png and loads it as a sprite
-     * @param path Resource path to PNG
+     * Sets the rendering layer of the sprite. This causes the sprite
+     * to be re-registered with the renderer on the new layer.
+     *
+     * @param newLayer The new rendering layer.
      */
-    public void loadSpriteFromPath(String path) {
-        System.out.println("Loading Sprite Texture at path:  " + path);
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream(path));
-            addToRenderer();
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage() + "Error Loading Image");
-        }
-    }
-
-    public static BufferedImage loadImage(String filename) {
-        //TODO - MAKE THIS ERROR OUT WITH A DEDICATED MESSAGE
-        if (filename.indexOf("./") == 0) {
-            filename = filename.substring(1);
-        }
-        else if (filename.charAt(0) != '/') {
-            filename = "/" + filename;
-        }
-
-        InputStream ipStream = Sprite.class.getResourceAsStream(filename);
-
-        if (ipStream != null) {
-            try {
-                return ImageIO.read(ipStream);
-            } catch (IOException e) {
-                System.out.println(e.getMessage() + "Error Loading Image at " + filename);
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Sets visibility of sprite
-     * @param newVisible Visibility of sprite
-     */
-    public void setVisible(boolean newVisible) {
-        visible = newVisible;
-    }
-
     public void setLayer(int newLayer) {
         removeFromRenderer();
         layer = newLayer;
         addToRenderer();
     }
 
+    /**
+     * Sets the visibility of the sprite.
+     * A non-visible sprite will not be rendered.
+     *
+     * @param visible True to make the sprite visible; false to hide it.
+     */
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    /**
+     * Deletes the Sprite and removes it from the renderer.
+     */
     @Override
     public void delete() {
         super.delete();
@@ -130,8 +110,10 @@ public class Sprite extends Component implements Renderable {
     }
 
     /**
-     * Draws Sprite to the screen
-     * @param g2 Graphics2D object used to draw images
+     * Renders the sprite to the screen using the provided Graphics2D object,
+     * if the sprite is currently marked as visible.
+     *
+     * @param g2 The Graphics2D context used for rendering.
      */
     @Override
     public void render(Graphics2D g2) {
@@ -141,8 +123,7 @@ public class Sprite extends Component implements Renderable {
     }
 
     /**
-     * Implementation from Renderable
-     * Adds object to Renderer
+     * Registers the sprite with the Renderer on its current layer.
      */
     @Override
     public void addToRenderer() {
@@ -150,8 +131,7 @@ public class Sprite extends Component implements Renderable {
     }
 
     /**
-     * Implementation from Renderable
-     * Removes object from Renderer
+     * Unregisters the sprite from the Renderer on its current layer.
      */
     @Override
     public void removeFromRenderer() {
