@@ -31,11 +31,11 @@
       <change beforePath="$PROJECT_DIR$/src/demos/timerdemo/TimerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/timerdemo/TimerDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/demos/timerdemo/TimerUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/timerdemo/TimerUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/demos/window/BasicWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/window/BasicWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Rotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Transform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/attributes/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/Vector2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/position/OffsetPosition2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/position/OffsetPosition2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/position/Position2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/position/Position2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/transform/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/transform/Rotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/transform/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/transform/Transform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/transform/position/OffsetPosition2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/transform/position/OffsetPosition2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/attributes/transform/position/Position2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/attributes/transform/position/Position2D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/audio/AudioPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/audio/AudioPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/Component.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/components/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/components/Timer.java" afterDir="false" />
@@ -79,11 +79,15 @@
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/render/Renderable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/render/Renderable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/render/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/render/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/MasterTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/MasterTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/CircleCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/CircleCollision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/CollisionServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/CollisionServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/SATBoxCircleCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/SATBoxCircleCollision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/SATBoxCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/collisions/SATBoxCollision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/gametick/GameTick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/gametick/GameTick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/physics/CollisionServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/physics/CollisionServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/updates/physics/PhysicsServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/updates/physics/PhysicsServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/window/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/window/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/window/WindowPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/window/WindowPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/tools/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/tools/ImageLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

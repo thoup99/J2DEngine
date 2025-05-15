@@ -1,6 +1,6 @@
 package demos.timerdemo;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.components.Timer;
 import j2d.components.graphics.text.CenteredText;
 import j2d.engine.gameobject.GameObject;

@@ -1,6 +1,6 @@
 package demos.shapespawning;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.components.graphics.shapes.*;
 import j2d.components.graphics.shapes.Shape;
 import j2d.engine.gameobject.GameObject;

@@ -1,6 +1,6 @@
 package demos.shapes;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.components.graphics.shapes.Circle;
 import j2d.components.graphics.shapes.Line;
 import j2d.components.graphics.shapes.Square;

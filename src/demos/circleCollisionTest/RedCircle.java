@@ -1,6 +1,6 @@
 package demos.circleCollisionTest;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.components.graphics.shapes.FillCircle;
 import j2d.components.physics.collider.CircleCollider;
 import j2d.components.physics.collider.Collider;

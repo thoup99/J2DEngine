@@ -1,6 +1,6 @@
 package demos.positiondisplay;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.engine.gameobject.GameObject;
 import j2d.engine.debug.PositionDisplay;
 import j2d.engine.input.mouse.motion.MouseMotionHandler;
