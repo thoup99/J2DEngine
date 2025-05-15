@@ -1,6 +1,6 @@
-package j2d.attributes;
+package j2d.attributes.transform;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 
 //TODO IMPLEMENT
 public class Transform {

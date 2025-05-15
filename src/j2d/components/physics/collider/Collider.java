@@ -2,7 +2,7 @@ package j2d.components.physics.collider;
 
 import j2d.components.Component;
 import j2d.engine.gameobject.GameObject;
-import j2d.engine.updates.physics.CollisionServer;
+import j2d.engine.updates.collisions.CollisionServer;
 
 public abstract class Collider extends Component {
     public Collider(GameObject parentGameObject) {

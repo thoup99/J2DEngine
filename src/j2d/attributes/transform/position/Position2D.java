@@ -1,4 +1,4 @@
-package j2d.attributes.position;
+package j2d.attributes.transform.position;
 
 
 import j2d.attributes.Vector2D;

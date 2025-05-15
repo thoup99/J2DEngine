@@ -1,6 +1,6 @@
 package j2d.engine.input.mouse.button;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

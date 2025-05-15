@@ -1,4 +1,4 @@
-package j2d.attributes.position;
+package j2d.attributes.transform.position;
 
 public class OffsetPosition2D extends Position2D {
     double x_offset, y_offset;

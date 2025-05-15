@@ -1,6 +1,6 @@
 package j2d.engine.window;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.engine.Engine;
 import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.keyboard.KeySubscriber;

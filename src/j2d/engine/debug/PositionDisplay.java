@@ -1,7 +1,7 @@
 package j2d.engine.debug;
 
-import j2d.attributes.position.OffsetPosition2D;
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.OffsetPosition2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.components.graphics.shapes.Circle;
 import j2d.components.graphics.shapes.FillCircle;
 import j2d.components.graphics.text.CenteredText;

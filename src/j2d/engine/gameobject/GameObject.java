@@ -11,7 +11,7 @@ import j2d.engine.input.mouse.motion.MouseMotionSubscriber;
 import j2d.engine.input.mouse.wheel.MouseWheelHandler;
 import j2d.engine.input.mouse.wheel.MouseWheelSubscriber;
 import j2d.engine.updates.gametick.GameTick;
-import j2d.engine.updates.physics.CollisionServer;
+import j2d.engine.updates.collisions.CollisionServer;
 import j2d.engine.updates.physics.PhysicsServer;
 
 import java.util.ArrayList;

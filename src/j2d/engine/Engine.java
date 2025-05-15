@@ -9,7 +9,7 @@ import j2d.engine.input.mouse.motion.MouseMotionHandler;
 import j2d.engine.input.mouse.wheel.MouseWheelHandler;
 import j2d.engine.updates.MasterTimer;
 import j2d.engine.updates.gametick.GameTick;
-import j2d.engine.updates.physics.CollisionServer;
+import j2d.engine.updates.collisions.CollisionServer;
 import j2d.engine.updates.physics.PhysicsServer;
 import j2d.engine.window.Window;
 

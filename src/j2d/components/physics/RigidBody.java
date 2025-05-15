@@ -1,6 +1,6 @@
 package j2d.components.physics;
 
-import j2d.attributes.Transform;
+import j2d.attributes.transform.Transform;
 import j2d.components.Component;
 import j2d.engine.gameobject.GameObject;
 import j2d.engine.updates.physics.PhysicsServer;

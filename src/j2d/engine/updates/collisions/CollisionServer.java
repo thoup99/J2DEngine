@@ -1,4 +1,4 @@
-package j2d.engine.updates.physics;
+package j2d.engine.updates.collisions;
 
 import j2d.components.physics.collider.BoxCollider;
 import j2d.components.physics.collider.CircleCollider;
@@ -43,37 +43,26 @@ public class CollisionServer {
     }
 
     private static boolean isColliding(Collider collider1, Collider collider2) {
-        //Determine Collision Type
+        // Determine Collision Type
+
+        // Box on Box
         if ((collider1 instanceof BoxCollider) && (collider2 instanceof BoxCollider)) {
-            return boxOnBox((BoxCollider) collider1, (BoxCollider) collider2);
+            return SATBoxCollision.check((BoxCollider) collider1, (BoxCollider) collider2);
 
+        // Circle on Circle
         } else if ((collider1 instanceof CircleCollider) && (collider2 instanceof CircleCollider)) {
-            return circleOnCircle((CircleCollider) collider1, (CircleCollider) collider2);
+            return CircleCollision.check((CircleCollider) collider1, (CircleCollider) collider2);
 
+        // Box on Circle
         } else if ((collider1 instanceof BoxCollider) && (collider2 instanceof CircleCollider)) {
-            return circleOnBox((CircleCollider) collider2, (BoxCollider) collider1);
+            return SATBoxCircleCollision.check((BoxCollider) collider1, (CircleCollider) collider2);
 
+        // Circle on Box
         } else if ((collider1 instanceof CircleCollider) && (collider2 instanceof BoxCollider)) {
-            return circleOnBox((CircleCollider) collider1, (BoxCollider) collider2);
+            return SATBoxCircleCollision.check((BoxCollider) collider2, (CircleCollider) collider1);
+
         }
 
-        return false;
-    }
-
-    private static boolean circleOnCircle(CircleCollider circle1, CircleCollider circle2) {
-        //Use squared length values to avoid using sqrt operation
-        double radiusSquared = Math.pow(circle1.getRadius() + circle2.getRadius(), 2);
-        double distanceSquared = circle1.getPosition().distance(circle2.getPosition()).getMagnitudeSquared();
-        return distanceSquared <= radiusSquared;
-    }
-
-    private static boolean circleOnBox(CircleCollider circleCollider, BoxCollider boxCollider) {
-        //Separating Axis Theorem
-        return false;
-    }
-
-    private static boolean boxOnBox(BoxCollider box1, BoxCollider box2) {
-        //Separating Axis Theorem
         return false;
     }
 }

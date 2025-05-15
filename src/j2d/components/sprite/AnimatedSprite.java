@@ -1,13 +1,11 @@
 package j2d.components.sprite;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 import j2d.components.Timer;
 import j2d.engine.gameobject.GameObject;
 
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class AnimatedSprite<T> extends SpriteSheet {

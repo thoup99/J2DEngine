@@ -1,6 +1,6 @@
 package j2d.attributes;
 
-import j2d.attributes.position.Position2D;
+import j2d.attributes.transform.position.Position2D;
 
 public class Vector2D {
     private static double thresh = 0.000001;

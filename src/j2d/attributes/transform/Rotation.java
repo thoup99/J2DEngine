@@ -1,4 +1,4 @@
-package j2d.attributes;
+package j2d.attributes.transform;
 
 //TODO IMPLEMENT
 public class Rotation {
