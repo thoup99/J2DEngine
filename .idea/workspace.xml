@@ -10,6 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412ba730-65e3-45ac-8cdf-1194f02c213e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/graphics/shapes/FillRectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/components/graphics/shapes/Rectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -201,6 +203,10 @@
       <workItem from="1744758191641" duration="2810000" />
       <workItem from="1745776952836" duration="1787000" />
       <workItem from="1746832650657" duration="41000" />
+      <workItem from="1747334122828" duration="84000" />
+      <workItem from="1747334212620" duration="1116000" />
+      <workItem from="1747771617166" duration="6000" />
+      <workItem from="1748026959458" duration="3904000" />
     </task>
     <servers />
   </component>

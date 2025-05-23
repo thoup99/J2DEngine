@@ -72,6 +72,10 @@ public class Position2D {
         addY(vector2D.getY());
     }
 
+    public static Vector2D subtract(Position2D pos1, Position2D pos2) {
+        return new Vector2D(pos2.getX() - pos1.getX(), pos2.getY() - pos1.getY());
+    }
+
     public double getX() {
         return x;
     }

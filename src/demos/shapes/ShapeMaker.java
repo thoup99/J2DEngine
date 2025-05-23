@@ -3,7 +3,7 @@ package demos.shapes;
 import j2d.attributes.transform.position.Position2D;
 import j2d.components.graphics.shapes.Circle;
 import j2d.components.graphics.shapes.Line;
-import j2d.components.graphics.shapes.Square;
+import j2d.components.graphics.shapes.Rectangle;
 import j2d.engine.gameobject.GameObject;
 import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.keyboard.KeySubscriber;
@@ -16,7 +16,7 @@ import java.awt.event.KeyEvent;
 
 public class ShapeMaker extends GameObject implements MouseMotionSubscriber, KeySubscriber {
     Line line;
-    Square square;
+    Rectangle rectangle;
     Circle circle;
 
     public ShapeMaker() {
@@ -24,17 +24,17 @@ public class ShapeMaker extends GameObject implements MouseMotionSubscriber, Key
         circle.setStrokeWidth(5);
         circle.setColor(Color.YELLOW);
 
-        square = new Square(this, 0, new Position2D(50, 50), new Position2D(550, 550));
-        square.setStrokeWidth(5);
-        square.setColor(Color.RED);
-
-        int[] keys = {KeyEvent.VK_T, KeyEvent.VK_Y, KeyEvent.VK_U};
-        KeyHandler.subscribe(this, keys);
+        rectangle = new Rectangle(this, new Position2D(300, 300), 500, 500, 0);
+        rectangle.setStrokeWidth(5);
+        rectangle.setColor(Color.RED);
 
         line = new Line(this, 0, new Position2D(0, 0), new Position2D(300, 300));
         line.setStrokeWidth(10);
         line.setColor(Color.BLUE);
         MouseMotionHandler.subscribe(this);
+
+        int[] keys = {KeyEvent.VK_T, KeyEvent.VK_Y, KeyEvent.VK_U};
+        KeyHandler.subscribe(this, keys);
 
         ready();
     }
@@ -63,13 +63,13 @@ public class ShapeMaker extends GameObject implements MouseMotionSubscriber, Key
     public void keyPressed(int key) {
         switch (key) {
             case KeyEvent.VK_T:
-                square.setTopLeft(Window.getMousePosition());
+                rectangle.setTopLeft(Window.getMousePosition());
                 break;
             case KeyEvent.VK_Y:
-                square.setBottomRight(Window.getMousePosition());
+                rectangle.setBottomRight(Window.getMousePosition());
                 break;
             case KeyEvent.VK_U:
-                System.out.println("Top Left: " + square.getTopLeft() + " Bottom Right: " + square.getBottomRight());
+                System.out.println("Top Left: " + rectangle.getTopLeft() + " Bottom Right: " + rectangle.getBottomRight());
         }
     }
 

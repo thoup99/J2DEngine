@@ -5,17 +5,9 @@ import j2d.engine.gameobject.GameObject;
 
 import java.awt.*;
 
-public class FillSquare extends Square {
-    public FillSquare(GameObject parentGameObject) {
-        super(parentGameObject);
-    }
-
-    public FillSquare(GameObject parentGameObject, int layer) {
-        super(parentGameObject, layer);
-    }
-
-    public FillSquare(GameObject parentGameObject, int layer, Position2D topLeft, Position2D bottomRight) {
-        super(parentGameObject, layer, topLeft, bottomRight);
+public class FillRectangle extends Rectangle {
+    public FillRectangle(GameObject parent, Position2D center, double width, double height, int layer) {
+        super(parent, center, width, height, layer);
     }
 
     @Override

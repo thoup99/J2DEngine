@@ -2,6 +2,7 @@ package demos.shapespawning;
 
 import j2d.attributes.transform.position.Position2D;
 import j2d.components.graphics.shapes.*;
+import j2d.components.graphics.shapes.Rectangle;
 import j2d.components.graphics.shapes.Shape;
 import j2d.engine.gameobject.GameObject;
 import j2d.engine.input.keyboard.KeyHandler;
@@ -40,15 +41,14 @@ public class ShapeSpawner extends GameObject implements KeySubscriber, MouseMoti
         return random.nextInt(max - min + 1) + min;
     }
 
-    private void spawnSquare(Position2D position2D) {
-        int size = getRandomInt(5, 50);
+    private void spawnRectangle(Position2D position2D) {
+        int width = getRandomInt(20, 100);
+        int height = getRandomInt(20, 100);
 
-        Square newSquare = new FillSquare(this, 0,
-                new Position2D(position2D.getX() - size, position2D.getY() - size),
-                new Position2D(position2D.getX() + size, position2D.getY() + size));
+        Rectangle rectangle = new FillRectangle(this, position2D, width, height, 0);
+        rectangle.setColor(getRandomColor());
 
-        newSquare.setColor(getRandomColor());
-        shapes.add(newSquare);
+        shapes.add(rectangle);
     }
 
     private void spawnCircle(Position2D position2D) {
@@ -72,7 +72,7 @@ public class ShapeSpawner extends GameObject implements KeySubscriber, MouseMoti
     @Override
     public void keyPressed(int key) {
         if (key == KeyEvent.VK_S) {
-            spawnSquare(Window.getMousePosition());
+            spawnRectangle(Window.getMousePosition());
         }
         if (key == KeyEvent.VK_C) {
             spawnCircle(Window.getMousePosition());
@@ -104,7 +104,7 @@ public class ShapeSpawner extends GameObject implements KeySubscriber, MouseMoti
         if (random.nextBoolean()) {
             spawnCircle(position);
         } else {
-            spawnSquare(position);
+            spawnRectangle(position);
         }
     }
 }
