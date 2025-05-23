@@ -31,6 +31,16 @@ public class Rectangle extends Shape {
         return bottomRight.copy();
     }
 
+    public void setCenterPosition(Position2D center) {
+        this.center.setPosition(center);
+        topLeft = new OffsetPosition2D(center, -width / 2, -height / 2);
+        bottomRight = new OffsetPosition2D(center, width / 2, height / 2);
+    }
+
+    public void setCenter(Position2D center) {
+        this.center.setPosition(center);
+    }
+
     public void setWidth(double width) {
         this.width = width;
         revalidateOffsets();
