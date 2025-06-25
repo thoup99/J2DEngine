@@ -10,6 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412ba730-65e3-45ac-8cdf-1194f02c213e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/AllDrawableCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/FollowCam2DTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/MoveablePlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/StaticCam2DTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/CameraServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/FollowCamera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/StaticCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -116,27 +124,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BasicWindow.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CircleCollisionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExampleWindowCreation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PositionDisplayer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ShapeSpawn.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ShapeTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimerDemo.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BasicWindow.executor": "Run",
+    "Application.CircleCollisionTest.executor": "Run",
+    "Application.ExampleWindowCreation.executor": "Run",
+    "Application.FollowCam2DTest.executor": "Run",
+    "Application.PositionDisplayer.executor": "Run",
+    "Application.Renderer.executor": "Run",
+    "Application.ShapeSpawn.executor": "Run",
+    "Application.ShapeTest.executor": "Run",
+    "Application.StaticCam2DTest.executor": "Run",
+    "Application.TimerDemo.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "testing",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -205,7 +216,10 @@
       <workItem from="1747334212620" duration="1116000" />
       <workItem from="1747771617166" duration="6000" />
       <workItem from="1748026959458" duration="3904000" />
-      <workItem from="1748033003565" duration="464000" />
+      <workItem from="1748033003565" duration="4221000" />
+      <workItem from="1748454153569" duration="23000" />
+      <workItem from="1749429338866" duration="46000" />
+      <workItem from="1750423897446" duration="16218000" />
     </task>
     <servers />
   </component>

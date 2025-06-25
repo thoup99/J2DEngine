@@ -1,12 +1,14 @@
 package j2d.engine;
 
 
+import j2d.engine.camera.CameraServer;
 import j2d.engine.debug.Debug;
 import j2d.engine.gameobject.GameObjectDeletion;
 import j2d.engine.input.keyboard.KeyHandler;
 import j2d.engine.input.mouse.button.MouseButtonHandler;
 import j2d.engine.input.mouse.motion.MouseMotionHandler;
 import j2d.engine.input.mouse.wheel.MouseWheelHandler;
+import j2d.engine.render.Renderer;
 import j2d.engine.updates.MasterTimer;
 import j2d.engine.updates.gametick.GameTick;
 import j2d.engine.updates.collisions.CollisionServer;
@@ -30,6 +32,7 @@ public class Engine implements Runnable {
         MouseButtonHandler.initialize();
         MouseMotionHandler.initialize();
         MouseWheelHandler.initialize();
+        CameraServer.initialize();
 
         //audio init
         //physics init?
@@ -104,6 +107,7 @@ public class Engine implements Runnable {
                 }
 
                 repaintWindow = true;
+                CameraServer.recalculateOffsets();
             }
 
             //Physics Tick
@@ -118,6 +122,7 @@ public class Engine implements Runnable {
                 if (Window.isCreated) {
                     window.repaintPanel();
                 }
+
                 currentFPS = (int) ((1.0 / elapsedSecondsFrame) + 0.5); //0.5 added to account for rounding
                 if (isPrintingFPS) {
                     System.out.println("Current FPS: " + currentFPS);

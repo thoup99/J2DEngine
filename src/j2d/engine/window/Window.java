@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 
 public class Window implements KeySubscriber {
     public static boolean isCreated = false;
-    int width, height;
+    private static int width, height;
     private boolean closeOnEsc = false;
 
     static JFrame frame;
@@ -27,8 +27,8 @@ public class Window implements KeySubscriber {
             throw new IllegalStateException("Window is already created");
         }
 
-        this.width = width;
-        this.height = height;
+        Window.width = width;
+        Window.height = height;
 
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -96,6 +96,14 @@ public class Window implements KeySubscriber {
 
     public void setBackgroundColor(Color newColor) {
         panel.setBackground(newColor);
+    }
+
+    public static int getWidth() {
+        return width;
+    }
+
+    public static int getHeight() {
+        return height;
     }
 
     @Override

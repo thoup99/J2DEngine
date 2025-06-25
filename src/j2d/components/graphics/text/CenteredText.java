@@ -2,6 +2,7 @@ package j2d.components.graphics.text;
 
 import j2d.attributes.transform.position.OffsetPosition2D;
 import j2d.attributes.transform.position.Position2D;
+import j2d.engine.camera.CameraServer;
 import j2d.engine.gameobject.GameObject;
 
 import java.awt.*;
@@ -66,7 +67,17 @@ public class CenteredText extends Text{
 
         g2Copy.setFont(font);
         g2Copy.setColor(textColor);
-        g2Copy.drawString(text, offsetPosition.getIntX(), offsetPosition.getIntY());
+
+        if (sticky) {
+            //Does not take camera position into consideration when drawing
+            g2Copy.drawString(text, offsetPosition.getIntX(), offsetPosition.getIntY());
+        } else {
+            //Uses camera position to draw with an offset
+            Position2D drawPosition = offsetPosition.copyCurrentPosition();
+            drawPosition.addVector2D(CameraServer.getOffsetVector());
+            g2Copy.drawString(text, drawPosition.getIntX(), drawPosition.getIntY());
+        }
+
         g2Copy.dispose();
     }
 }

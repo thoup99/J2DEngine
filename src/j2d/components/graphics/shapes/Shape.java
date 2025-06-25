@@ -12,6 +12,8 @@ public abstract class Shape extends Component implements Renderable {
     protected Color color;
     protected BasicStroke stroke;
 
+    protected boolean sticky = false;
+
     public Shape(GameObject parentGameObject) {
         this(parentGameObject, Renderer.getTopLayer());
     }
@@ -43,6 +45,10 @@ public abstract class Shape extends Component implements Renderable {
         if (color != null) {
             g2.setColor(color);
         }
+    }
+
+    public void setSticky(boolean sticky) {
+        this.sticky = sticky;
     }
 
     @Override

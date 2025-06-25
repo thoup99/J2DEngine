@@ -2,6 +2,7 @@ package j2d.components.graphics.text;
 
 import j2d.attributes.transform.position.Position2D;
 import j2d.components.Component;
+import j2d.engine.camera.CameraServer;
 import j2d.engine.gameobject.GameObject;
 import j2d.engine.render.Renderable;
 import j2d.engine.render.Renderer;
@@ -21,6 +22,8 @@ public class Text extends Component implements Renderable {
     String text;
     Position2D position;
     private int layer;
+
+    protected boolean sticky = false;
 
     public Text(GameObject parentGameObject, Position2D position, String text) {
         this(parentGameObject, position, text, Renderer.getTopLayer());
@@ -70,6 +73,10 @@ public class Text extends Component implements Renderable {
         font = font.deriveFont(style, size);
     }
 
+    public void setSticky(boolean sticky) {
+        this.sticky = sticky;
+    }
+
     @Override
     public void delete() {
         super.delete();
@@ -90,7 +97,17 @@ public class Text extends Component implements Renderable {
     public void render(Graphics2D g2) {
         Graphics2D g2Copy = (Graphics2D) g2.create();
         g2Copy.setColor(textColor);
-        g2Copy.drawString(text, position.getIntX(), position.getIntY()); //Position is bottom left of Text
+
+        if (sticky) {
+            //Does not take camera position into consideration when drawing
+            g2Copy.drawString(text, position.getIntX(), position.getIntY()); //Position is bottom left of Text
+        } else {
+            //Uses camera position to draw with an offset
+            Position2D drawPosition = position.copy();
+            drawPosition.addVector2D(CameraServer.getOffsetVector());
+            g2Copy.drawString(text, drawPosition.getIntX(), drawPosition.getIntY());
+        }
+
         g2Copy.dispose();
     }
 }
