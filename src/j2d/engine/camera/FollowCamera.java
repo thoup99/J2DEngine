@@ -19,12 +19,12 @@ public class FollowCamera extends Camera {
     }
 
     @Override
-    int getOffsetX() {
-        return followPoint.getIntX() - (Window.getWidth() / 2);
+    double getOffsetX() {
+        return followPoint.getX() - ((double) Window.getWidth() / 2);
     }
 
     @Override
-    int getOffsetY() {
-        return followPoint.getIntY() - (Window.getHeight() / 2);
+    double getOffsetY() {
+        return followPoint.getIntY() - ((double) Window.getHeight() / 2);
     }
 }

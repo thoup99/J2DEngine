@@ -7,12 +7,12 @@ public class StaticCamera extends Camera {
     }
 
     @Override
-    int getOffsetX() {
+    double getOffsetX() {
         return 0;
     }
 
     @Override
-    int getOffsetY() {
+    double getOffsetY() {
         return 0;
     }
 }

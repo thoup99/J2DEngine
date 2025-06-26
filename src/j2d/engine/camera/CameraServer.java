@@ -4,7 +4,6 @@ import j2d.attributes.Vector2D;
 
 public class CameraServer {
     private static Camera camera;
-    private static int xOffset, yOffset = 0;
     private static Vector2D offsetVector = new Vector2D(0, 0);
 
     public static void initialize() {
@@ -12,21 +11,11 @@ public class CameraServer {
     }
 
     public static void recalculateOffsets() {
-        xOffset = camera.getOffsetX();
-        yOffset = camera.getOffsetY();
-        offsetVector = new Vector2D(xOffset, yOffset).flip();
+        offsetVector = new Vector2D(camera.getOffsetX(), camera.getOffsetY()).flip();
     }
 
     public static void setCamera(Camera camera) {
         CameraServer.camera = camera;
-    }
-
-    public static int getOffsetX() {
-        return xOffset;
-    }
-
-    public static int getOffsetY() {
-        return yOffset;
     }
 
     public static Vector2D getOffsetVector() {
