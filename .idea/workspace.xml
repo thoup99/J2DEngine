@@ -10,14 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412ba730-65e3-45ac-8cdf-1194f02c213e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/AllDrawableCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/FollowCam2DTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/MoveablePlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/demos/camera2dtest/StaticCam2DTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/CameraServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/FollowCamera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/j2d/engine/camera/StaticCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -25,6 +17,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/J2DEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/J2DEngine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/camera2dtest/AllDrawableCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/camera2dtest/AllDrawableCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/camera2dtest/FollowCam2DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/camera2dtest/FollowCam2DTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/camera2dtest/MoveablePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/camera2dtest/MoveablePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demos/camera2dtest/StaticCam2DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/camera2dtest/StaticCam2DTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/demos/circleCollisionTest/BlueCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/circleCollisionTest/BlueCircle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/demos/circleCollisionTest/CircleCollisionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/circleCollisionTest/CircleCollisionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/demos/circleCollisionTest/RedCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/demos/circleCollisionTest/RedCircle.java" afterDir="false" />
@@ -69,6 +65,10 @@
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/audio/Mp3Clip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/audio/Mp3Clip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/audio/OggClip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/audio/OggClip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/audio/WavClip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/audio/WavClip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/camera/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/camera/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/camera/CameraServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/camera/CameraServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/camera/FollowCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/camera/FollowCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/j2d/engine/camera/StaticCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/camera/StaticCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/debug/Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/debug/Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/debug/FPSDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/debug/FPSDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/j2d/engine/debug/MousePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/j2d/engine/debug/MousePrinter.java" afterDir="false" />
@@ -219,7 +219,7 @@
       <workItem from="1748033003565" duration="4221000" />
       <workItem from="1748454153569" duration="23000" />
       <workItem from="1749429338866" duration="46000" />
-      <workItem from="1750423897446" duration="16218000" />
+      <workItem from="1750423897446" duration="17025000" />
     </task>
     <servers />
   </component>

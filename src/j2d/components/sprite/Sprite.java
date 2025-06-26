@@ -2,6 +2,7 @@ package j2d.components.sprite;
 
 
 import j2d.components.Component;
+import j2d.engine.camera.CameraServer;
 import j2d.engine.gameobject.GameObject;
 import j2d.engine.render.Renderable;
 import j2d.engine.render.Renderer;
@@ -27,6 +28,8 @@ public class Sprite extends Component implements Renderable {
     protected boolean visible = true;
     protected BufferedImage image;
     private int layer;
+
+    boolean sticky = false;
 
     /**
      * Constructs a Sprite using a resource path to load the image.
@@ -101,6 +104,17 @@ public class Sprite extends Component implements Renderable {
     }
 
     /**
+     * Sets the "Stickyness" of the Sprite
+     * Sticky Sprites will not respond to camera movement while nonsticky
+     * ones will.
+     *
+     * @param sticky
+     */
+    public void setSticky(boolean sticky) {
+        this.sticky = sticky;
+    }
+
+    /**
      * Deletes the Sprite and removes it from the renderer.
      */
     @Override
@@ -118,7 +132,14 @@ public class Sprite extends Component implements Renderable {
     @Override
     public void render(Graphics2D g2) {
         if (visible) {
-            g2.drawImage(image, position.getIntX(), position.getIntY(), image.getWidth(), image.getHeight(), null);
+            if (sticky) {
+                g2.drawImage(image, position.getIntX(), position.getIntY(), image.getWidth(), image.getHeight(), null);
+            } else {
+                Position2D drawPosition = position.copy();
+                drawPosition.addVector2D(CameraServer.getOffsetVector());
+
+                g2.drawImage(image, drawPosition.getIntX(), drawPosition.getIntY(), image.getWidth(), image.getHeight(), null);
+            }
         }
     }
 

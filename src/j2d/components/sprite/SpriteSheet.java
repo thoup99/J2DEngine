@@ -1,6 +1,7 @@
 package j2d.components.sprite;
 
 import j2d.attributes.transform.position.Position2D;
+import j2d.engine.camera.CameraServer;
 import j2d.engine.gameobject.GameObject;
 import j2d.tools.ImageLoader;
 
@@ -198,7 +199,14 @@ public class SpriteSheet extends Sprite {
     @Override
     public void render(Graphics2D g2) {
         if (visible) {
-            g2.drawImage(spriteImage, position.getIntX(), position.getIntY(), individualSpriteWidth, individualSpriteHeight, null);
+            if (sticky) {
+                g2.drawImage(spriteImage, position.getIntX(), position.getIntY(), individualSpriteWidth, individualSpriteHeight, null);
+            } else {
+                Position2D drawPosition = position.copy();
+                drawPosition.addVector2D(CameraServer.getOffsetVector());
+
+                g2.drawImage(spriteImage, drawPosition.getIntX(), drawPosition.getIntY(), individualSpriteWidth, individualSpriteHeight, null);
+            }
         }
     }
 }

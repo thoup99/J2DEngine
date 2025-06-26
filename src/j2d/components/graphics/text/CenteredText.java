@@ -73,7 +73,7 @@ public class CenteredText extends Text{
             g2Copy.drawString(text, offsetPosition.getIntX(), offsetPosition.getIntY());
         } else {
             //Uses camera position to draw with an offset
-            Position2D drawPosition = offsetPosition.copyCurrentPosition();
+            Position2D drawPosition = offsetPosition.copy();
             drawPosition.addVector2D(CameraServer.getOffsetVector());
             g2Copy.drawString(text, drawPosition.getIntX(), drawPosition.getIntY());
         }

@@ -57,16 +57,17 @@ public class OffsetPosition2D extends Position2D {
 
     @Override
     public Position2D copy() {
-        return new OffsetPosition2D(basePosition, x_offset, y_offset);
+        return new Position2D(getX(), getY());
+    }
+
+    public void copyOffset() {
+        new OffsetPosition2D(basePosition, x_offset, y_offset);
     }
 
     public Position2D getBasePosition() {
         return basePosition;
     }
 
-    public Position2D copyCurrentPosition() {
-        return new Position2D(getX(), getY());
-    }
 
     @Override
     public String toString() {
